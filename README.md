@@ -13,4 +13,5 @@ Also, while I do not assume any programming background on your part, I have deci
 
 Each of these articles contains a list of prerequisites and focuses on a, largely, self-contained application of some focused topic.  As such, individual articles could be read in the order in which curiosity guides you.  However, they were originally written as supplementary readings to a standard undergraduate course in linear algebra, and this gives them a natural order:
 1. [Matrices as Images](/matrices-as-images/matrices-as-images.ipynb)
-2. Higher Dimensions and Linear Regression
+2. [Higher Dimensions and Linear Regression](/higher-dimensions-and-linear-regression/higher-dimensions-and-linear-regression.ipynb)
+3. [Euclidean Distance: A Recommendation Engine Using Nearest Neighbors](/euclidean-distance-a-recommendation-engine-using-nearest-neighbors/euclidean-distance-a-recommendation-engine-using-nearest-neighbors.ipynb)
