@@ -15,3 +15,5 @@ Each of these articles contains a list of prerequisites and focuses on a, largel
 1. [Matrices as Images](/matrices-as-images/matrices-as-images.ipynb)
 2. [Higher Dimensions and Linear Regression](/higher-dimensions-and-linear-regression/higher-dimensions-and-linear-regression.ipynb)
 3. [Euclidean Distance: A Recommendation Engine Using Nearest Neighbors](/euclidean-distance-a-recommendation-engine-using-nearest-neighbors/euclidean-distance-a-recommendation-engine-using-nearest-neighbors.ipynb)
+4. [Matrix Multiplication to Find Connecting Flights](/matrix-multiplication-to-find-connecting-flights/matrix-multiplication-to-find-connecting-flights.ipynb)
+5. [Adjacency Matrices for Descriptors in Dracula](/adjacency-matrices-for-descriptors-in-dracula/adjacency-matrices-for-descriptors-in-dracula.ipynb)
