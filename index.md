@@ -19,3 +19,4 @@ Each of these articles contains a list of prerequisites and focuses on a, largel
 3. [Euclidean Distance: A Recommendation Engine Using Nearest Neighbors](/euclidean-distance-a-recommendation-engine-using-nearest-neighbors/euclidean-distance-a-recommendation-engine-using-nearest-neighbors.ipynb)
 4. [Matrix Multiplication to Find Connecting Flights](/matrix-multiplication-to-find-connecting-flights/matrix-multiplication-to-find-connecting-flights.ipynb)
 5. [Adjacency Matrices for Descriptors in Dracula](/adjacency-matrices-for-descriptors-in-dracula/adjacency-matrices-for-descriptors-in-dracula.ipynb)
+6. [Link to another page](./another-page.html)
