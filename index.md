@@ -14,9 +14,9 @@ Also, while I do not assume any programming background on your part, I have deci
 ### Suggested Reading Order
 
 Each of these articles contains a list of prerequisites and focuses on a, largely, self-contained application of some focused topic.  As such, individual articles could be read in the order in which curiosity guides you.  However, they were originally written as supplementary readings to a standard undergraduate course in linear algebra, and this gives them a natural order:
-1. [Matrices as Images](./matrices-as-images.md)
+1. [Matrices as Images](./matrices-as-images.html)
 2. [Higher Dimensions and Linear Regression](./higher-dimensions-and-linear-regression.html)
 3. [Euclidean Distance: A Recommendation Engine Using Nearest Neighbors](./euclidean-distance-a-recommendation-engine-using-nearest-neighbors.html)
 4. [Matrix Multiplication to Find Connecting Flights](./matrix-multiplication-to-find-connecting-flights.html)
 5. [Adjacency Matrices for Descriptors in Dracula](./adjacency-matrices-for-descriptors-in-dracula.html)
-6. [Link to another page](./another-page.md)
+6. [Link to another page](./another-page.html)
