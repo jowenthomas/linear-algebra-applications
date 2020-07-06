@@ -42,7 +42,7 @@ where we have labelled the pixel locations for easy reference.  We see that ther
 Because the pixels of an image form a natural grid layout, it is tempting to represent the same information numerically using a matrix:
 
 $$\begin{bmatrix}
-0  0  0  0  0\\
+0  \ 0  \ 0  \ 0  \ 0\\
 0  1  0  1  0\\
 0  0  0  0  0\\
 0  1  0  1  0\\
@@ -94,7 +94,7 @@ plt.show()
 ```
 
 
-![png](output_7_0.png)
+![png](./images/matrices_as_images/person.png)
 
 
 In theory, you could send someone a blank 8x11 grid and the matrix above, and they could fill in the appropriate shading.  In fact, the <a>paint-by-numbers</a> people beat us to this idea by about 70 years, simply using a less rigid grid system and a nominal classification of the colors, rather than our percentage classification of the shading.
@@ -119,7 +119,7 @@ plt.imshow(palm)
 
 
 
-![png](./images/matrices_as_images/person.png)
+![png](./images/matrices_as_images/palm.png)
 
 
 We have the following colors for the pixels in this image:
