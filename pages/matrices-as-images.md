@@ -3,16 +3,16 @@
 
 <h2>Prerequisites</h2>
 <ul>
-    <li>The basic concept of <a>pixels</a></li>
-    <li>The <a>RGB color model</a></li>
-    <li>You've seen a <a>matrix</a></li>
+    <li>The basic concept of <a href="https://en.wikipedia.org/wiki/Pixel" target="_blank">pixels</a></li>
+    <li>The <a href="https://en.wikipedia.org/wiki/RGB_color_model" target="_blank">RGB color model</a></li>
+    <li>You've seen a <a href="https://en.wikipedia.org/wiki/Matrix_(mathematics)" target="_blank">matrix</a></li>
 </ul>
 
 <h2>Introduction</h2>
 
 Depending on whom you ask, there are a number of different answers you will receive to the question, "What is a matrix?".  On most days, I would answer that it represents a linear transformation of a vector space.  Someone else would answer that it is convenient bookkeeping for encoding a system of equations.  Someone putting on airs might describe it as an order 2 tensor (sidenote: run away from the person who provides such an answer to a student in their first linear algebra course).  Finally, someone might describe it as a 2-dimensional grid in which we may organize information.
 
-This final answer is, arguably, the most accurate answer (<a>Wikipedia</a> seems to agree).  But, the preceding answers aren't entirely incorrect.  Because of the sizeable utility of matrices and, as a consequence, their ubiquitity in both pure and applied math, matrices generally appear with interpretations laid on top of them.  Depending on how careful we are being, we may forget that a matrix is not necessarily the object or action that it represents.
+This final answer is, arguably, the most accurate answer (<a href="https://en.wikipedia.org/wiki/Matrix_(mathematics)" target="_blank">Wikipedia</a> seems to agree).  But, the preceding answers aren't entirely incorrect.  Because of the sizeable utility of matrices and, as a consequence, their ubiquitity in both pure and applied math, matrices generally appear with interpretations laid on top of them.  Depending on how careful we are being, we may forget that a matrix is not necessarily the object or action that it represents.
 
 Accepting that matrices generally come loaded with interpretations, let's follow suit and discuss matrices as a means to encode the state of a pixel in an image.  We will iterate on this idea, adding complexity as we go.  First we will develop matrices as encoding the information for a black and white image.  Then, we will extend this to a greyscale image.  And, we will finish by discussing a full-color, RGB, image.
 
@@ -60,8 +60,7 @@ where 1 indicates a black pixel and 0 represents a white pixel.  If you needed t
 
 Now, let's extend this basic idea by introducing fractional values.  This time, let's begin by taking a matrix:
 
-$$
-\begin{bmatrix}
+$$\begin{bmatrix}
   0 &0 &0 &0 &0 &0 &0 &0 &0\\\
   0 &0 &1 &1 &1 &1 &1 &0 &0\\\
   0 &1 &\frac{1}{2} &\frac{1}{2} &\frac{1}{2} &\frac{1}{2} &\frac{1}{2} &1 &0\\\
@@ -74,8 +73,7 @@ $$
   0 &0 &\frac{3}{4} &\frac{3}{4} &\frac{3}{4} &\frac{3}{4} &\frac{3}{4} &0 &0\\\
   0 &0 &\frac{1}{4} &\frac{1}{4} &\frac{1}{4} &\frac{1}{4} &\frac{1}{4} &0 &0\\\
   0 &0 &\frac{1}{2} &\frac{1}{2} &0 &\frac{1}{2} &\frac{1}{2} &0 &0
-\end{bmatrix}
-$$
+\end{bmatrix}$$
 
 If we choose to interpret these fractional values as greyscale (where 1 is black, 0 is white, and fractions represent an  intensity of the shade of grey), we can render the corresponding image:
 
@@ -101,26 +99,19 @@ plt.show()
 ![png](./images/matrices_as_images/person.png)
 
 
-In theory, you could send someone a blank 8x11 grid and the matrix above, and they could fill in the appropriate shading.  In fact, the <a>paint-by-numbers</a> people beat us to this idea by about 70 years, simply using a less rigid grid system and a nominal classification of the colors, rather than our percentage classification of the shading.
+In theory, you could send someone a blank 8x11 grid and the matrix above, and they could fill in the appropriate shading.  In fact, the <a href="https://en.wikipedia.org/wiki/Paint_by_number" target="_blank">paint-by-numbers</a> people beat us to this idea by about 70 years, simply using a less rigid grid system and a nominal classification of the colors, rather than our percentage classification of the shading.
 
 <h2>Images in full color</h2>
 
-Now, let's further extend this idea to a full-color, RGB, image. Consider the following image (modelled after this <a>design</a>)
+Now, let's further extend this idea to a full-color, RGB, image. Consider the following image (modelled after this <a href="https://www.brik.co/blogs/pixel-art/palm-trees-pixel-art-1" target="_blank">design</a>)
 
 
 ```python
-image_file = './images/matrices_as_images/palm.png'
+image_file = 'palm.png'
 palm = plt.imread(image_file) 
 plt.axis('off')
 plt.imshow(palm)
 ```
-
-
-
-
-    <matplotlib.image.AxesImage at 0x7f8b25d7c908>
-
-
 
 
 ![png](./images/matrices_as_images/palm.png)
@@ -150,91 +141,86 @@ plt.show()
 
 Each pixel, in fact, receives three pieces of information: an amount of red, green, and blue, given as a triplet (red, green, blue) with values ranging from 0 to 255.  For example, the blue of the ocean has an RGB value of (0,119,190) and the orange on the island has an RGB value of (252,126,64).  And, it should seem reasonable that the very blue color has zero red in it, whereas, the orange color has a great deal of red in it.  
 
-To be clear, these values represent the amount of, say, red that a pixel should recieve.  So, 0 indicates that it should receive no red and 255 indicates full red.  Ultimately, this is another way of representing fractional values.  We could, in fact, normalize these values to be between 0 and 1, like we did with the greyscale example above.  For example, a value of 85 in the range [0,255] is equivalent to the value of $\frac{1}{3}$ in the range [0,1].  The choice is somewhat arbitrary (some color classification websites will give you <a>both</a>, along with a number of other systems for representing colors), but below we will see that the integer values do make the matrix representation easier to read.
+To be clear, these values represent the amount of, say, red that a pixel should recieve.  So, 0 indicates that it should receive no red and 255 indicates full red.  Ultimately, this is another way of representing fractional values.  We could, in fact, normalize these values to be between 0 and 1, like we did with the greyscale example above.  For example, a value of 85 in the range [0,255] is equivalent to the value of $\frac{1}{3}$ in the range [0,1].  The choice is somewhat arbitrary (some color classification websites will give you <a href="https://www.colorhexa.com/0077be" target="_blank">both</a>, along with a number of other systems for representing colors), but below we will see that the integer values do make the matrix representation easier to read.
 
 We can reframe this slightly: because every pixel receives red, green, and blue information, we can discuss the amount of, say, red that is passed into all of the pixels separately from the other colors.  And, we can represent this as a, fairly large, matrix, where each entry indicates the amount of red in each corresponding pixel of the image.
 
 
 
-$$
-\begin{bmatrix}
-  153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153\\
-  153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153\\
-  153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153\\
-  153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153\\
-  153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 16 &amp; 176 &amp; 153 &amp; 153\\
-  153 &amp; 153 &amp; 153 &amp; 176 &amp; 16 &amp; 153 &amp; 153 &amp; 16 &amp; 16 &amp; 153 &amp; 153 &amp; 16 &amp; 176 &amp; 153 &amp; 153 &amp; 153\\
-  153 &amp; 153 &amp; 176 &amp; 16 &amp; 153 &amp; 153 &amp; 153 &amp; 176 &amp; 176 &amp; 16 &amp; 16 &amp; 16 &amp; 176 &amp; 153 &amp; 153 &amp; 153\\
-  153 &amp; 153 &amp; 176 &amp; 16 &amp; 153 &amp; 176 &amp; 16 &amp; 153 &amp; 153 &amp; 176 &amp; 176 &amp; 176 &amp; 16 &amp; 16 &amp; 16 &amp; 153\\
-  153 &amp; 153 &amp; 176 &amp; 16 &amp; 176 &amp; 16 &amp; 153 &amp; 176 &amp; 176 &amp; 16 &amp; 16 &amp; 176 &amp; 176 &amp; 16 &amp; 176 &amp; 16\\
-  153 &amp; 16 &amp; 16 &amp; 176 &amp; 16 &amp; 153 &amp; 153 &amp; 16 &amp; 16 &amp; 153 &amp; 105 &amp; 105 &amp; 16 &amp; 176 &amp; 16 &amp; 153\\
-  16 &amp; 176 &amp; 176 &amp; 16 &amp; 176 &amp; 105 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 121 &amp; 105 &amp; 16 &amp; 176 &amp; 16 &amp; 153\\
-  16 &amp; 153 &amp; 176 &amp; 16 &amp; 176 &amp; 105 &amp; 121 &amp; 153 &amp; 153 &amp; 105 &amp; 105 &amp; 121 &amp; 153 &amp; 176 &amp; 16 &amp; 153\\
-  153 &amp; 153 &amp; 16 &amp; 176 &amp; 153 &amp; 153 &amp; 105 &amp; 105 &amp; 153 &amp; 121 &amp; 105 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153\\
-  153 &amp; 153 &amp; 16 &amp; 176 &amp; 153 &amp; 153 &amp; 153 &amp; 121 &amp; 105 &amp; 105 &amp; 121 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153\\
-  153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 105 &amp; 121 &amp; 105 &amp; 105 &amp; 153 &amp; 153 &amp; 153 &amp; 153 &amp; 153\\
-  0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 105 &amp; 121 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\
-  0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 254 &amp; 254 &amp; 254 &amp; 105 &amp; 105 &amp; 254 &amp; 254 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\
-  0 &amp; 0 &amp; 0 &amp; 0 &amp; 254 &amp; 254 &amp; 254 &amp; 254 &amp; 121 &amp; 105 &amp; 254 &amp; 254 &amp; 254 &amp; 253 &amp; 0 &amp; 0\\
-  0 &amp; 0 &amp; 0 &amp; 0 &amp; 253 &amp; 253 &amp; 254 &amp; 254 &amp; 254 &amp; 254 &amp; 254 &amp; 254 &amp; 253 &amp; 253 &amp; 0 &amp; 0\\
-  0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 253 &amp; 253 &amp; 253 &amp; 253 &amp; 253 &amp; 253 &amp; 253 &amp; 253 &amp; 0 &amp; 0 &amp; 0\\
-\end{bmatrix}
-$$
+$$\begin{bmatrix}
+  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153\\\
+  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153\\\
+  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153\\\
+  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153\\\
+  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153 &  153 &  16 &  176 &  153 &  153\\\
+  153 &  153 &  153 &  176 &  16 &  153 &  153 &  16 &  16 &  153 &  153 &  16 &  176 &  153 &  153 &  153\\\
+  153 &  153 &  176 &  16 &  153 &  153 &  153 &  176 &  176 &  16 &  16 &  16 &  176 &  153 &  153 &  153\\\
+  153 &  153 &  176 &  16 &  153 &  176 &  16 &  153 &  153 &  176 &  176 &  176 &  16 &  16 &  16 &  153\\\
+  153 &  153 &  176 &  16 &  176 &  16 &  153 &  176 &  176 &  16 &  16 &  176 &  176 &  16 &  176 &  16\\\
+  153 &  16 &  16 &  176 &  16 &  153 &  153 &  16 &  16 &  153 &  105 &  105 &  16 &  176 &  16 &  153\\\
+  16 &  176 &  176 &  16 &  176 &  105 &  153 &  153 &  153 &  153 &  121 &  105 &  16 &  176 &  16 &  153\\\
+  16 &  153 &  176 &  16 &  176 &  105 &  121 &  153 &  153 &  105 &  105 &  121 &  153 &  176 &  16 &  153\\\
+  153 &  153 &  16 &  176 &  153 &  153 &  105 &  105 &  153 &  121 &  105 &  153 &  153 &  153 &  153 &  153\\\
+  153 &  153 &  16 &  176 &  153 &  153 &  153 &  121 &  105 &  105 &  121 &  153 &  153 &  153 &  153 &  153\\\
+  153 &  153 &  153 &  153 &  153 &  153 &  153 &  105 &  121 &  105 &  105 &  153 &  153 &  153 &  153 &  153\\\
+  0 &  0 &  0 &  0 &  0 &  0 &  0 &  0 &  105 &  121 &  0 &  0 &  0 &  0 &  0 &  0\\\
+  0 &  0 &  0 &  0 &  0 &  254 &  254 &  254 &  105 &  105 &  254 &  254 &  0 &  0 &  0 &  0\\\
+  0 &  0 &  0 &  0 &  254 &  254 &  254 &  254 &  121 &  105 &  254 &  254 &  254 &  253 &  0 &  0\\\
+  0 &  0 &  0 &  0 &  253 &  253 &  254 &  254 &  254 &  254 &  254 &  254 &  253 &  253 &  0 &  0\\\
+  0 &  0 &  0 &  0 &  0 &  253 &  253 &  253 &  253 &  253 &  253 &  253 &  253 &  0 &  0 &  0
+\end{bmatrix}$$
 
 Note how the pixels corresponding to the ocean have a red value of zero, as we would expect.
 
 Similarly, we can isolate the green information: 
-$$
-\begin{bmatrix}
-  204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204\\
-  204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204\\
-  204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204\\
-  204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204\\
-  204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 106 &amp; 189 &amp; 204 &amp; 204\\
-  204 &amp; 204 &amp; 204 &amp; 189 &amp; 106 &amp; 204 &amp; 204 &amp; 106 &amp; 106 &amp; 204 &amp; 204 &amp; 106 &amp; 189 &amp; 204 &amp; 204 &amp; 204\\
-  204 &amp; 204 &amp; 189 &amp; 106 &amp; 204 &amp; 204 &amp; 204 &amp; 189 &amp; 189 &amp; 106 &amp; 106 &amp; 106 &amp; 189 &amp; 204 &amp; 204 &amp; 204\\
-  204 &amp; 204 &amp; 189 &amp; 106 &amp; 204 &amp; 189 &amp; 106 &amp; 204 &amp; 204 &amp; 189 &amp; 189 &amp; 189 &amp; 106 &amp; 106 &amp; 106 &amp; 204\\
-  204 &amp; 204 &amp; 189 &amp; 106 &amp; 189 &amp; 106 &amp; 204 &amp; 189 &amp; 189 &amp; 106 &amp; 106 &amp; 189 &amp; 189 &amp; 106 &amp; 189 &amp; 106\\
-  204 &amp; 106 &amp; 106 &amp; 189 &amp; 106 &amp; 204 &amp; 204 &amp; 106 &amp; 106 &amp; 204 &amp; 79 &amp; 79 &amp; 106 &amp; 189 &amp; 106 &amp; 204\\
-  106 &amp; 189 &amp; 189 &amp; 106 &amp; 189 &amp; 79 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 85 &amp; 79 &amp; 106 &amp; 189 &amp; 106 &amp; 204\\
-  106 &amp; 204 &amp; 189 &amp; 106 &amp; 189 &amp; 79 &amp; 85 &amp; 204 &amp; 204 &amp; 79 &amp; 79 &amp; 85 &amp; 204 &amp; 189 &amp; 106 &amp; 204\\
-  204 &amp; 204 &amp; 106 &amp; 189 &amp; 204 &amp; 204 &amp; 79 &amp; 79 &amp; 204 &amp; 85 &amp; 79 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204\\
-  204 &amp; 204 &amp; 106 &amp; 189 &amp; 204 &amp; 204 &amp; 204 &amp; 85 &amp; 79 &amp; 79 &amp; 85 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204\\
-  204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 79 &amp; 85 &amp; 79 &amp; 79 &amp; 204 &amp; 204 &amp; 204 &amp; 204 &amp; 204\\
-  120 &amp; 120 &amp; 120 &amp; 120 &amp; 120 &amp; 120 &amp; 120 &amp; 120 &amp; 79 &amp; 85 &amp; 120 &amp; 120 &amp; 120 &amp; 120 &amp; 120 &amp; 120\\
-  120 &amp; 120 &amp; 120 &amp; 120 &amp; 120 &amp; 193 &amp; 193 &amp; 193 &amp; 79 &amp; 79 &amp; 193 &amp; 193 &amp; 120 &amp; 120 &amp; 120 &amp; 120\\
-  120 &amp; 120 &amp; 120 &amp; 120 &amp; 193 &amp; 193 &amp; 193 &amp; 193 &amp; 85 &amp; 79 &amp; 193 &amp; 193 &amp; 193 &amp; 127 &amp; 120 &amp; 120\\
-  120 &amp; 120 &amp; 120 &amp; 120 &amp; 127 &amp; 127 &amp; 193 &amp; 193 &amp; 193 &amp; 193 &amp; 193 &amp; 193 &amp; 127 &amp; 127 &amp; 120 &amp; 120\\
-  120 &amp; 120 &amp; 120 &amp; 120 &amp; 120 &amp; 127 &amp; 127 &amp; 127 &amp; 127 &amp; 127 &amp; 127 &amp; 127 &amp; 127 &amp; 120 &amp; 120 &amp; 120\\
-\end{bmatrix}
-$$
+$$\begin{bmatrix}
+  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204\\\
+  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204\\\
+  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204\\\
+  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204\\\
+  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204 &  204 &  106 &  189 &  204 &  204\\\
+  204 &  204 &  204 &  189 &  106 &  204 &  204 &  106 &  106 &  204 &  204 &  106 &  189 &  204 &  204 &  204\\\
+  204 &  204 &  189 &  106 &  204 &  204 &  204 &  189 &  189 &  106 &  106 &  106 &  189 &  204 &  204 &  204\\\
+  204 &  204 &  189 &  106 &  204 &  189 &  106 &  204 &  204 &  189 &  189 &  189 &  106 &  106 &  106 &  204\\\
+  204 &  204 &  189 &  106 &  189 &  106 &  204 &  189 &  189 &  106 &  106 &  189 &  189 &  106 &  189 &  106\\\
+  204 &  106 &  106 &  189 &  106 &  204 &  204 &  106 &  106 &  204 &  79 &  79 &  106 &  189 &  106 &  204\\\
+  106 &  189 &  189 &  106 &  189 &  79 &  204 &  204 &  204 &  204 &  85 &  79 &  106 &  189 &  106 &  204\\\
+  106 &  204 &  189 &  106 &  189 &  79 &  85 &  204 &  204 &  79 &  79 &  85 &  204 &  189 &  106 &  204\\\
+  204 &  204 &  106 &  189 &  204 &  204 &  79 &  79 &  204 &  85 &  79 &  204 &  204 &  204 &  204 &  204\\\
+  204 &  204 &  106 &  189 &  204 &  204 &  204 &  85 &  79 &  79 &  85 &  204 &  204 &  204 &  204 &  204\\\
+  204 &  204 &  204 &  204 &  204 &  204 &  204 &  79 &  85 &  79 &  79 &  204 &  204 &  204 &  204 &  204\\\
+  120 &  120 &  120 &  120 &  120 &  120 &  120 &  120 &  79 &  85 &  120 &  120 &  120 &  120 &  120 &  120\\\
+  120 &  120 &  120 &  120 &  120 &  193 &  193 &  193 &  79 &  79 &  193 &  193 &  120 &  120 &  120 &  120\\\
+  120 &  120 &  120 &  120 &  193 &  193 &  193 &  193 &  85 &  79 &  193 &  193 &  193 &  127 &  120 &  120\\\
+  120 &  120 &  120 &  120 &  127 &  127 &  193 &  193 &  193 &  193 &  193 &  193 &  127 &  127 &  120 &  120\\\
+  120 &  120 &  120 &  120 &  120 &  127 &  127 &  127 &  127 &  127 &  127 &  127 &  127 &  120 &  120 &  120
+\end{bmatrix}$$
 
 And the blue information:
 
 $$
 \begin{bmatrix}
-  255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255\\
-  255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255\\
-  255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255\\
-  255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255\\
-  255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 64 &amp; 80 &amp; 255 &amp; 255\\
-  255 &amp; 255 &amp; 255 &amp; 80 &amp; 64 &amp; 255 &amp; 255 &amp; 64 &amp; 64 &amp; 255 &amp; 255 &amp; 64 &amp; 80 &amp; 255 &amp; 255 &amp; 255\\
-  255 &amp; 255 &amp; 80 &amp; 64 &amp; 255 &amp; 255 &amp; 255 &amp; 80 &amp; 80 &amp; 64 &amp; 64 &amp; 64 &amp; 80 &amp; 255 &amp; 255 &amp; 255\\
-  255 &amp; 255 &amp; 80 &amp; 64 &amp; 255 &amp; 80 &amp; 64 &amp; 255 &amp; 255 &amp; 80 &amp; 80 &amp; 80 &amp; 64 &amp; 64 &amp; 64 &amp; 255\\
-  255 &amp; 255 &amp; 80 &amp; 64 &amp; 80 &amp; 64 &amp; 255 &amp; 80 &amp; 80 &amp; 64 &amp; 64 &amp; 80 &amp; 80 &amp; 64 &amp; 80 &amp; 64\\
-  255 &amp; 64 &amp; 64 &amp; 80 &amp; 64 &amp; 255 &amp; 255 &amp; 64 &amp; 64 &amp; 255 &amp; 68 &amp; 68 &amp; 64 &amp; 80 &amp; 64 &amp; 255\\
-  64 &amp; 80 &amp; 80 &amp; 64 &amp; 80 &amp; 68 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 72 &amp; 68 &amp; 64 &amp; 80 &amp; 64 &amp; 255\\
-  64 &amp; 255 &amp; 80 &amp; 64 &amp; 80 &amp; 68 &amp; 72 &amp; 255 &amp; 255 &amp; 68 &amp; 68 &amp; 72 &amp; 255 &amp; 80 &amp; 64 &amp; 255\\
-  255 &amp; 255 &amp; 64 &amp; 80 &amp; 255 &amp; 255 &amp; 68 &amp; 68 &amp; 255 &amp; 72 &amp; 68 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255\\
-  255 &amp; 255 &amp; 64 &amp; 80 &amp; 255 &amp; 255 &amp; 255 &amp; 72 &amp; 68 &amp; 68 &amp; 72 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255\\
-  255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 68 &amp; 72 &amp; 68 &amp; 68 &amp; 255 &amp; 255 &amp; 255 &amp; 255 &amp; 255\\
-  190 &amp; 190 &amp; 190 &amp; 190 &amp; 190 &amp; 190 &amp; 190 &amp; 190 &amp; 68 &amp; 72 &amp; 190 &amp; 190 &amp; 190 &amp; 190 &amp; 190 &amp; 190\\
-  190 &amp; 190 &amp; 190 &amp; 190 &amp; 190 &amp; 61 &amp; 61 &amp; 61 &amp; 68 &amp; 68 &amp; 61 &amp; 61 &amp; 190 &amp; 190 &amp; 190 &amp; 190\\
-  190 &amp; 190 &amp; 190 &amp; 190 &amp; 61 &amp; 61 &amp; 61 &amp; 61 &amp; 72 &amp; 68 &amp; 61 &amp; 61 &amp; 61 &amp; 64 &amp; 190 &amp; 190\\
-  190 &amp; 190 &amp; 190 &amp; 190 &amp; 64 &amp; 64 &amp; 61 &amp; 61 &amp; 61 &amp; 61 &amp; 61 &amp; 61 &amp; 64 &amp; 64 &amp; 190 &amp; 190\\
-  190 &amp; 190 &amp; 190 &amp; 190 &amp; 190 &amp; 64 &amp; 64 &amp; 64 &amp; 64 &amp; 64 &amp; 64 &amp; 64 &amp; 64 &amp; 190 &amp; 190 &amp; 190\\
-\end{bmatrix}
-$$
+  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255\\\
+  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255\\\
+  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255\\\
+  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255\\\
+  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255 &  255 &  64 &  80 &  255 &  255\\\
+  255 &  255 &  255 &  80 &  64 &  255 &  255 &  64 &  64 &  255 &  255 &  64 &  80 &  255 &  255 &  255\\\
+  255 &  255 &  80 &  64 &  255 &  255 &  255 &  80 &  80 &  64 &  64 &  64 &  80 &  255 &  255 &  255\\\
+  255 &  255 &  80 &  64 &  255 &  80 &  64 &  255 &  255 &  80 &  80 &  80 &  64 &  64 &  64 &  255\\\
+  255 &  255 &  80 &  64 &  80 &  64 &  255 &  80 &  80 &  64 &  64 &  80 &  80 &  64 &  80 &  64\\\
+  255 &  64 &  64 &  80 &  64 &  255 &  255 &  64 &  64 &  255 &  68 &  68 &  64 &  80 &  64 &  255\\\
+  64 &  80 &  80 &  64 &  80 &  68 &  255 &  255 &  255 &  255 &  72 &  68 &  64 &  80 &  64 &  255\\\
+  64 &  255 &  80 &  64 &  80 &  68 &  72 &  255 &  255 &  68 &  68 &  72 &  255 &  80 &  64 &  255\\\
+  255 &  255 &  64 &  80 &  255 &  255 &  68 &  68 &  255 &  72 &  68 &  255 &  255 &  255 &  255 &  255\\\
+  255 &  255 &  64 &  80 &  255 &  255 &  255 &  72 &  68 &  68 &  72 &  255 &  255 &  255 &  255 &  255\\\
+  255 &  255 &  255 &  255 &  255 &  255 &  255 &  68 &  72 &  68 &  68 &  255 &  255 &  255 &  255 &  255\\\
+  190 &  190 &  190 &  190 &  190 &  190 &  190 &  190 &  68 &  72 &  190 &  190 &  190 &  190 &  190 &  190\\\
+  190 &  190 &  190 &  190 &  190 &  61 &  61 &  61 &  68 &  68 &  61 &  61 &  190 &  190 &  190 &  190\\\
+  190 &  190 &  190 &  190 &  61 &  61 &  61 &  61 &  72 &  68 &  61 &  61 &  61 &  64 &  190 &  190\\\
+  190 &  190 &  190 &  190 &  64 &  64 &  61 &  61 &  61 &  61 &  61 &  61 &  64 &  64 &  190 &  190\\\
+  190 &  190 &  190 &  190 &  190 &  64 &  64 &  64 &  64 &  64 &  64 &  64 &  64 &  190 &  190 &  190
+\end{bmatrix}$$
 
 Indeed, based on these matrices, we could represent 3 versions of the image, one for each color:
 
@@ -262,7 +248,7 @@ plt.show()
 
 And, a nice way to conceptualize the final image is to imagine laying each of these colored sheets on top of each other, so that the colors blend together.  Because the dimensions of the red, green, and blue matrices all agree, we can be confident that every pixel will receive red, green, and blue information.
 
-The details of the digital image processing are a little too far afield for this article (but certainly accessible with sufficient curiosity; <a>these lectures</a> and <a>this tutorial</a> seem like reasonable starting points), as are the technical details of how one can "glue" the corresponding matrices together.  As an introduction, some intuition on how matrices can encode information was our true goal here, and we can leave some mysteries for another day.
+The details of the digital image processing are a little too far afield for this article (but certainly accessible with sufficient curiosity; <a href="https://archive.org/details/Lectures_on_Image_Processing" target="_blank">these lectures</a> and <a href="http://preservationtutorial.library.cornell.edu/tutorial/contents.html" target="_blank">this tutorial</a> seem like reasonable starting points), as are the technical details of how one can "glue" the corresponding matrices together.  As an introduction, some intuition on how matrices can encode information was our true goal here, and we can leave some mysteries for another day.
 
 <h2>Closing Thoughts</h2>
 
