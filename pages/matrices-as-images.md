@@ -47,17 +47,10 @@ $$\begin{bmatrix}
 0 & 0 & 0 & 0 & 0\\\
 0 & 1 & 0 & 1 & 0\\\
 0 & 0 & 1 & 0 & 0\\\
-0 & 0 & 0 & 0 & 0\\\
+0 & 0 & 0 & 0 & 0
 \end{bmatrix}$$
 
-$$\begin{bmatrix}
-0 & 0  & 0  & 0  & 0\\\\
-0 & 1 & 0 & 1 & 0\\\\
-0 & 0 & 0 & 0 & 0\\\\
-0 & 1 & 0 & 1 & 0\\\\
-0 & 0 & 1 & 0 & 0\\\\
-0 & 0 & 0 & 0 & 0\\\\
-\end{bmatrix}$$
+
 
 
 
@@ -69,18 +62,18 @@ Now, let's extend this basic idea by introducing fractional values.  This time, 
 
 $$
 \begin{bmatrix}
-  0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\
-  0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0\\
-  0 &amp; 1 &amp; \frac{1}{2} &amp; \frac{1}{2} &amp; \frac{1}{2} &amp; \frac{1}{2} &amp; \frac{1}{2} &amp; 1 &amp; 0\\
-  0 &amp; 1 &amp; \frac{1}{2} &amp; 1 &amp; \frac{1}{2} &amp; 1 &amp; \frac{1}{2} &amp; 1 &amp; 0\\
-  0 &amp; 1 &amp; \frac{1}{2} &amp; \frac{1}{2} &amp; \frac{1}{2} &amp; \frac{1}{2} &amp; \frac{1}{2} &amp; 1 &amp; 0\\
-  0 &amp; 1 &amp; \frac{1}{2} &amp; 1 &amp; 1 &amp; 1 &amp; \frac{1}{2} &amp; 1 &amp; 0\\
-  0 &amp; 0 &amp; \frac{1}{2} &amp; \frac{1}{2} &amp; \frac{1}{2} &amp; \frac{1}{2} &amp; \frac{1}{2} &amp; 0 &amp; 0\\
-  \frac{1}{2} &amp; \frac{1}{2} &amp; \frac{3}{4} &amp; \frac{3}{4} &amp; \frac{3}{4} &amp; \frac{3}{4} &amp; \frac{3}{4} &amp; \frac{1}{2} &amp; \frac{1}{2}\\
-  \frac{1}{2} &amp; \frac{1}{2} &amp; \frac{3}{4} &amp; \frac{3}{4} &amp; \frac{3}{4} &amp; \frac{3}{4} &amp; \frac{3}{4} &amp; \frac{1}{2} &amp; \frac{1}{2}\\
-  0 &amp; 0 &amp; \frac{3}{4} &amp; \frac{3}{4} &amp; \frac{3}{4} &amp; \frac{3}{4} &amp; \frac{3}{4} &amp; 0 &amp; 0\\
-  0 &amp; 0 &amp; \frac{1}{4} &amp; \frac{1}{4} &amp; \frac{1}{4} &amp; \frac{1}{4} &amp; \frac{1}{4} &amp; 0 &amp; 0\\
-  0 &amp; 0 &amp; \frac{1}{2} &amp; \frac{1}{2} &amp; 0 &amp; \frac{1}{2} &amp; \frac{1}{2} &amp; 0 &amp; 0\\
+  0 &0 &0 &0 &0 &0 &0 &0 &0\\\
+  0 &0 &1 &1 &1 &1 &1 &0 &0\\\
+  0 &1 &\frac{1}{2} &\frac{1}{2} &\frac{1}{2} &\frac{1}{2} &\frac{1}{2} &1 &0\\\
+  0 &1 &\frac{1}{2} &1 &\frac{1}{2} &1 &\frac{1}{2} &1 &0\\\
+  0 &1 &\frac{1}{2} &\frac{1}{2} &\frac{1}{2} &\frac{1}{2} &\frac{1}{2} &1 &0\\\
+  0 &1 &\frac{1}{2} &1 &1 &1 &\frac{1}{2} &1 &0\\\
+  0 &0 &\frac{1}{2} &\frac{1}{2} &\frac{1}{2} &\frac{1}{2} &\frac{1}{2} &0 &0\\\
+  \frac{1}{2} &\frac{1}{2} &\frac{3}{4} &\frac{3}{4} &\frac{3}{4} &\frac{3}{4} &\frac{3}{4} &\frac{1}{2} &\frac{1}{2}\\\
+  \frac{1}{2} &\frac{1}{2} &\frac{3}{4} &\frac{3}{4} &\frac{3}{4} &\frac{3}{4} &\frac{3}{4} &\frac{1}{2} &\frac{1}{2}\\\
+  0 &0 &\frac{3}{4} &\frac{3}{4} &\frac{3}{4} &\frac{3}{4} &\frac{3}{4} &0 &0\\\
+  0 &0 &\frac{1}{4} &\frac{1}{4} &\frac{1}{4} &\frac{1}{4} &\frac{1}{4} &0 &0\\\
+  0 &0 &\frac{1}{2} &\frac{1}{2} &0 &\frac{1}{2} &\frac{1}{2} &0 &0
 \end{bmatrix}
 $$
 
