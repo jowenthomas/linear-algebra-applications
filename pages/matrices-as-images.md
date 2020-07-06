@@ -34,7 +34,7 @@ plt.show()
 ```
 
 
-![png](output_3_0.png)
+![png](./images/matrices_as_images/face.png)
 
 
 where we have labelled the pixel locations for easy reference.  We see that there are five black pixels and 25 white pixels. 
@@ -42,12 +42,12 @@ where we have labelled the pixel locations for easy reference.  We see that ther
 Because the pixels of an image form a natural grid layout, it is tempting to represent the same information numerically using a matrix:
 
 $$\begin{bmatrix}
-0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\
-0 &amp; 1 &amp; 0 &amp; 1 &amp; 0\\
-0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\
-0 &amp; 1 &amp; 0 &amp; 1 &amp; 0\\
-0 &amp; 0 &amp; 1 &amp; 0 &amp; 0\\
-0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\
+0 0 0 0 0\\
+0 1 0 1 0\\
+0 0 0 0 0\\
+0 1 0 1 0\\
+0 0 1 0 0\\
+0 0 0 0 0\\
 \end{bmatrix}$$
 
 where 1 indicates a black pixel and 0 represents a white pixel.  If you needed to share this image with someone, but weren't able to show them the actual image, then this matrix would make for a reasonable stand-in. Indeed, if you squint a little, you can see that the same smily face appears in both cases.
@@ -105,7 +105,7 @@ Now, let's further extend this idea to a full-color, RGB, image. Consider the fo
 
 
 ```python
-image_file = 'palm.png'
+image_file = './images/matrices_as_images/palm.png'
 palm = plt.imread(image_file) 
 plt.axis('off')
 plt.imshow(palm)
@@ -119,7 +119,7 @@ plt.imshow(palm)
 
 
 
-![png](output_11_1.png)
+![png](./images/matrices_as_images/person.png)
 
 
 We have the following colors for the pixels in this image:
@@ -141,7 +141,7 @@ plt.show()
 ```
 
 
-![png](output_13_0.png)
+![png](./images/matrices_as_images/colors.png)
 
 
 Each pixel, in fact, receives three pieces of information: an amount of red, green, and blue, given as a triplet (red, green, blue) with values ranging from 0 to 255.  For example, the blue of the ocean has an RGB value of (0,119,190) and the orange on the island has an RGB value of (252,126,64).  And, it should seem reasonable that the very blue color has zero red in it, whereas, the orange color has a great deal of red in it.  
@@ -253,7 +253,7 @@ plt.show()
 ```
 
 
-![png](output_18_0.png)
+![png](./images/matrices_as_images/rgb_palms.png)
 
 
 And, a nice way to conceptualize the final image is to imagine laying each of these colored sheets on top of each other, so that the colors blend together.  Because the dimensions of the red, green, and blue matrices all agree, we can be confident that every pixel will receive red, green, and blue information.
