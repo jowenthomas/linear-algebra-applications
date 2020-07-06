@@ -1,4 +1,0 @@
-another page
-
-[back](./)
-

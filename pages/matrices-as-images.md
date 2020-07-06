@@ -42,12 +42,12 @@ where we have labelled the pixel locations for easy reference.  We see that ther
 Because the pixels of an image form a natural grid layout, it is tempting to represent the same information numerically using a matrix:
 
 $$\begin{bmatrix}
-0 0 0 0 0\\
-0 1 0 1 0\\
-0 0 0 0 0\\
-0 1 0 1 0\\
-0 0 1 0 0\\
-0 0 0 0 0\\
+0  0  0  0  0\\
+0  1  0  1  0\\
+0  0  0  0  0\\
+0  1  0  1  0\\
+0  0  1  0  0\\
+0  0  0  0  0\\
 \end{bmatrix}$$
 
 where 1 indicates a black pixel and 0 represents a white pixel.  If you needed to share this image with someone, but weren't able to show them the actual image, then this matrix would make for a reasonable stand-in. Indeed, if you squint a little, you can see that the same smily face appears in both cases.
