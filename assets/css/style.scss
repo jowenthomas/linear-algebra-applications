@@ -3,20 +3,21 @@
 
 @import "{{ site.theme }}";
 
-#header_wrap {
+header {
   background-image: linear-gradient(to top, #483d41, #2b2427);
 }
 
-#main_content_wrap {
+
+
+body {
   background-color: #d4d2d1;
 }
 
-#footer_wrap {
-  background-image: linear-gradient(to top, #2b2427,#483d41);
-}
 
-.proj {
+
+header li {
   background-color: #b8b5b3;
+  background-image: linear-gradient(to top, #b8b5b3, #d4d2d1);
 }
 
 a {
