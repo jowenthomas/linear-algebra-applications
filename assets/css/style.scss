@@ -1,0 +1,26 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+#header_wrap {
+  background-image: linear-gradient(to top, #483d41, #2b2427);
+}
+
+#main_content_wrap {
+  background-color: #d4d2d1;
+}
+
+#footer_wrap {
+  background-image: linear-gradient(to top, #2b2427,#483d41);
+}
+
+.proj {
+  background-color: #b8b5b3;
+}
+
+a {
+  color: black;
+  font-size: 15px;
+  text-decoration: underline;
+}
