@@ -1,5 +1,3 @@
-index file version
-
 # Linear Algebra Applications
 
 The applications of linear algebra are ubiquitous in both pure and applied math, and often underlie the methods and procedures utilized in a wide variety of domains.  While the objects and methods of linear algebra are intrinsically interesting and fit into a rather elegant framework, these articles attempt to breathe a little modern life into them.  My focus here is on intuition and motivation.  As such, I take some liberties with the technical details of some of the applications.  If these articles either provide useful analogies for how to think about these concepts or if they whet your appetite to dig in to the details of applications via a more robust and rigorous source, then I think they will have accomplished my goal in writing them. 
