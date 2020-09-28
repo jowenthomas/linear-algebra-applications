@@ -4,8 +4,8 @@ A Recommendation Engine Using Nearest Neighbors</h1>
 
 <h2>Prerequisites</h2>
 <ul>
-    <li>You have seen the standard/Euclidean <a>norm</a> of a vector</li>
-    <li>You have some awareness of the ubiquity of making recommendations online.  For reference, briefly skim <a>this wiki</a>, <a> this article</a> about Netflix from more than a decade ago, and <a> this article</a> about YouTube indicating how this is still a difficult task. </li>
+    <li>You have seen the standard/Euclidean <a href="https://en.wikipedia.org/wiki/Norm_(mathematics)#Euclidean_norm" target="_blank">norm</a> of a vector</li>
+    <li>You have some awareness of the ubiquity of making recommendations online.  For reference, briefly skim <a href="https://en.wikipedia.org/wiki/Recommender_system" target="_blank">this wiki</a>, <a href="https://www.thrillist.com/entertainment/nation/the-netflix-prize#" target="_blank"> this article</a> about Netflix from more than a decade ago, and <a href="https://www.nytimes.com/2017/04/17/arts/youtube-broadcasters-algorithm-ads.html" target="_blank"> this article</a> about YouTube indicating how this is still a difficult task. </li>
     <li>It would be helpful if you have read the article, Higher Dimensions and Linear Regression, as we will be using a 20-dim space below
 </li></ul>
 
@@ -20,8 +20,6 @@ There are certainly a few ways we could go about doing this:
     <li>We could narrow our selection of users from our userbase to those who have similar taste to John on the other Pixar films, and use their ratings of Cars 2</li>
 </ul>
 We will focus our attention on this last one.  If we can find users who have similar taste to John, then we are likely to be able to provide some insight into John's future opinions.  There actually many ways to do this, and plenty of ongoing research on how to do it well, but we will focus on the method of nearest neighbors, which can leverage Euclidean distance to find the users closest to John.
-
-Note to self: if we can solve this recommendation engine problem, then we can spend our energy on chasing the real money and open a gym
 
 <h2>Review of Euclidean Distance</h2>
 Before we dive into the details, let's briefly review Euclidean distance, which is the most common way to define the distance between two points.  In part, this is because the Euclidean norm of a vector is defined using nothing more than the Pythagorean theorem.  
@@ -42,7 +40,7 @@ plt.show()
 ```
 
 
-![png](output_4_0.png)
+![png](./images/euclidean-distance-a-recommendation-engine-using-nearest-neighbors/output_4_0.png)
 
 
 By applying the Pythagorean theorem, we get that the length of this vector is 
@@ -65,7 +63,7 @@ plt.show()
 ```
 
 
-![png](output_6_0.png)
+![png](./images/euclidean-distance-a-recommendation-engine-using-nearest-neighbors/output_6_0.png)
 
 
 Then we can see that to move between $\mathbf{v}$ and $\mathbf{u}$ we simply need to move 1 unit to the right and we don't need to adjust our vertical direction at all, i.e., the distance between them is 1.
@@ -313,7 +311,7 @@ plt.show()
 ```
 
 
-![png](output_12_0.png)
+![png](./images/euclidean-distance-a-recommendation-engine-using-nearest-neighbors/output_12_0.png)
 
 
 But, besides being a jumbled mess to look at, there is no clear indication which movie would best predict a ranking for the value of Cars 2.  That is, even though it is easy to see who is close together in two dimensions, we would like to avoid having to choose only one movie and would rather include all of the movies so that we have a better representation of "taste."
@@ -551,7 +549,7 @@ I think it's ok to acknowledge a few short-comings with the above analysis, as t
 That being said, hopefully this article has firmly imprinted the definition of the Euclidean norm in your brain; provided an test-case for how to start thinking about real-world problems like an algebraist; and inspired you to go use your linear algebra skills to frame, ask, and ideally answer some interesting practical questions.
 
 <b>Further Reading</b>:
-Stanford's <a>CS231n</a> has a nice write-up on the topic, and  Domingos'  <a>paper</a>, <i>A Few Useful Things to Know about Machine Learning</i>, is an interesting read.
+Stanford's <a href="http://cs231n.github.io/classification/#nn" target="_blank">CS231n</a> has a nice write-up on the topic, and  Domingos'  <a href="https://homes.cs.washington.edu/~pedrod/papers/cacm12.pdf" target="_blank">paper</a>, <i>A Few Useful Things to Know about Machine Learning</i>, is an interesting read.
 
 <h2>Appendix: Tools Used</h2>
 
@@ -1075,6 +1073,3 @@ And, we now have a dataframe with 500 user ratings such that the mean rating for
 Again, this does have a slight problem with it.  Notice under Cars 2 that the max rating is 9.2.  I'm sure there is someone out there who loves Cars 2 and gave it a 10.  But, they are so far away from the mean, even without knowing the standard deviation, that they aren't likely to have many associates. Also, I have allowed our user ratings to be floats, rounded to one decimal place; I think IMDB only allows for integer voting values.  As I observered earlier, I would like to return to the structure of the obs_generator function to resolve this continuous vs. discrete variable issue at a later date.  Also, in a survey this large, we would surely have some Null values for users who haven't seen a particular movie.  I have generated ratings for every user for every movie, but, in practice, we would need to confront these Null values and decide how to parse them.  But, for the linear algebra discussion above, I am content with these slight abuses of reality.
 
 
-```python
-
-```

@@ -3,8 +3,8 @@
 
 <h2>Prerequisites</h2>
 <ul>
-    <li>The basic concept of <a>vectors</a></li>
-    <li>The motivation of linear regression, on the level of <a>this explanation</a></li>
+    <li>The basic concept of <a href="https://en.wikipedia.org/wiki/Row_and_column_vectors" target="_blank">vectors</a></li>
+    <li>The motivation of linear regression, on the level of <a href="https://www.youtube.com/watch?v=zPG4NjIkCjc" target="_blank">this explanation</a></li>
 </ul>
 
 <h2>Introduction</h2>
@@ -17,7 +17,7 @@ In all of these cases, we reasonably assume that the answers are multi-faceted o
 
 In this article, we will try to decouple the word "dimension" from the physical and instead develop a framework where "dimension" means something closer to component or attribute of the whole, each independent of the others and important in its own right.  In doing so, we will develop a viewpoint of vectors as a way to organize these components and how numerical values in particular instances of these vectors can give us good information if we have the right interpretations in place.  In addition, we will use some basic linear regression ideas in an attempt to deepen our intuition about the broader interplay of all of these components.
 
-Specifically, we will look at the price of wine as it relates to a number of factors.  This work was originally done by <a>Orley C. Ashenfelter</a>, and we will work with data as presented by the course <a>The Analytics Edge</a>, available on edX.  <a>This short video</a> provides some context for why Ashenfelter performed his research.
+Specifically, we will look at the price of wine as it relates to a number of factors.  This work was originally done by <a href="https://irs.princeton.edu/people/orley-c-ashenfelter" target="_blank">Orley C. Ashenfelter</a>, and we will work with data as presented by the course <a href="https://www.edx.org/course/the-analytics-edge" target="_blank">The Analytics Edge</a>, available on edX.  <a href="https://www.youtube.com/watch?v=vI3envXmyDs" target="_blank">This short video</a> provides some context for why Ashenfelter performed his research.
 
 <h2>2-Dimensional Vectors</h2>
 Let's begin by comparing the price of wine and the average growing temperature in the season the grapes were grown (AGST).  This means for some bottle of wine, we have two pieces of information, and it is very natural to represent these as an ordered pair:
@@ -49,12 +49,8 @@ plt.xlabel('Average Temperature')
 
 
 
-    Text(0.5,0,'Average Temperature')
 
-
-
-
-![png](output_4_1.png)
+![png](./images/higher-dimensions-and-linear-regression/output_4_1.png)
 
 
 And, every dot on our graph represents a vector given by observations in our data set.  For example, we can see one of our earlier examples, $[8.5, 17.3]$, in the top right corner.  This provides us with a nice visual way to process the information in our data set.  For example, the range in each dimension of our observed values is easy to read at a glance.
@@ -87,7 +83,7 @@ plt.show()
 ```
 
 
-![png](output_6_0.png)
+![png](./images/higher-dimensions-and-linear-regression/output_6_0.png)
 
 
 If you have seen linear regression before, then the middle option should immediately jump out as a better fit than the other two.  It turns out there is some indication that we are reasonably good at eye-balling the best fit line, but we aren't perfect at it (see <a>this paper</a>, if you are curious).  We make this process rigourous by having a robust method of choosing our coefficients, generally using the ordinary least squares method, but I will save the details for your exploration.  In terms of our model, $y=\beta_0 + \beta_1 x_1$, it is noteworthy that, numerically, this indicates that $\beta_1 &gt; 0$.
@@ -110,12 +106,7 @@ plt.xlabel('Average Temperature')
 
 
 
-    Text(0.5,0,'Average Temperature')
-
-
-
-
-![png](output_9_1.png)
+![png](./images/higher-dimensions-and-linear-regression/output_9_1.png)
 
 
 Even if we adjust the scale, and mentally track that these vectors start at the origin, the result isn't much better:
@@ -136,12 +127,8 @@ plt.xlabel('Average Temperature')
 
 
 
-    Text(0.5,0,'Average Temperature')
 
-
-
-
-![png](output_11_1.png)
+![png](./images/higher-dimensions-and-linear-regression/output_11_1.png)
 
 
 While I do not want to tumble down the rabbit-hole of elements in a vector space here, I do want to observe that a vector is a purely algebraic object.  A vector is not the ordered tuple $[x_1, x_2]$, nor is it an arrow with direction and magnitude, nor is it a point in space.  All of these are ways in which we represent the underlying vector.  As such, we are very much <i>choosing</i> a geometric representation here, and a point in the plane is more suited to our present purposes than an arrow.  Furthermore, we will see very shortly that we are unable to rely on our visualizations in general, and debating which visual representation is most accurate is very much beside the point.
@@ -178,7 +165,7 @@ plt.show()
 ```
 
 
-![png](output_14_0.png)
+![png](./images/higher-dimensions-and-linear-regression/output_14_0.png)
 
 
 Where the value in each vector representation, e.g., $[7.5, 17.1, 600]$, indicates how far we should move along each axis away from the origin.
@@ -215,7 +202,7 @@ plt.show()
 ```
 
 
-![png](output_16_0.png)
+![png](./images/higher-dimensions-and-linear-regression/output_16_0.png)
 
 
 Before we were able to look at the slope of the line, and because it was positively-sloped we concluded that as AGST increased the price would increase as well.  Here, we can see a similar relationship in each independent variable.  The plane is tilted up as AGST increases and it is tilted up as WinterRain increases.  The type of conclusions we draw as we look at each axis individually should feel like repeating the same type of analysis that we did with the line.  This visually indicates that each of these variables is contributing to higher prices.  In terms of our model, $y=\beta_0 + \beta_1 x_1 + \beta_2 x_2$, this can be expressed numerically as $\beta_1 &gt; 0$ and $\beta_2 &gt;0$.
@@ -842,13 +829,7 @@ plt.xlabel('Average Temperature')
 
 
 
-
-    Text(0.5,0,'Average Temperature')
-
-
-
-
-![png](output_36_1.png)
+![png](./images/higher-dimensions-and-linear-regression/output_36_1.png)
 
 
 
@@ -866,13 +847,7 @@ plt.xlabel('Average Temperature')
 
 
 
-
-    Text(0.5,0,'Average Temperature')
-
-
-
-
-![png](output_37_1.png)
+![png](./images/higher-dimensions-and-linear-regression/output_37_1.png)
 
 
 Let's now extend this model to include two variables, Average Temperature and WinterRain
@@ -957,7 +932,7 @@ plt.show()
 ```
 
 
-![png](output_42_0.png)
+![png](./images/higher-dimensions-and-linear-regression/output_42_0.png)
 
 
 
@@ -986,7 +961,7 @@ plt.show()
 ```
 
 
-![png](output_43_0.png)
+![png](./images/higher-dimensions-and-linear-regression/output_43_0.png)
 
 
 

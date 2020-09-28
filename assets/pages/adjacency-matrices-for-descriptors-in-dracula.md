@@ -3,8 +3,8 @@
 
 <h2>Prerequisites</h2>
 <ul>
-    <li>You are familiar with the main characters of the novel.  A quick read of the plot and main characters of the <a>wiki</a> will suffice.  You could also watch Francis Ford Coppola's <i><a>Bram Stoker's Dracula</a></i>; but, be aware that they inject a love narrative between Dracula and Mina that does not exist in the novel, and will seem contraditactory to the characterization of Dracula that we develop below.</li>
-    <li>Familiarity with adjacency matrcies, either from the <a>wiki</a> or by reading the previous article, Matrix Multiplication to Find Connecting Flights.</li>
+    <li>You are familiar with the main characters of the novel.  A quick read of the plot and main characters of the <a href="https://en.wikipedia.org/wiki/Dracula" target="_blank">wiki</a> will suffice.  You could also watch Francis Ford Coppola's <i><a href="https://www.imdb.com/title/tt0103874/" target="_blank">Bram Stoker's Dracula</a></i>; but, be aware that they inject a love narrative between Dracula and Mina that does not exist in the novel, and will seem contraditactory to the characterization of Dracula that we develop below.</li>
+    <li>Familiarity with adjacency matrcies, either from the <a href="https://en.wikipedia.org/wiki/Adjacency_matrix" target="_blank">wiki</a> or by reading the previous article, Matrix Multiplication to Find Connecting Flights.</li>
 </ul>
 
 <h2>Introduction</h2>
@@ -90,7 +90,7 @@ text.dispersion_plot(['red','white','green','blue','yellow','purple','black'])
 ```
 
 
-![png](output_8_0.png)
+![png](./images/adjacency-matrices-for-descriptors-in-dracula/output_8_0.png)
 
 
 Here, each hash indicates that a word occurs, and the horizontal axis here indicates where in the text that occurs, starting at word 0 and progressing to the end of the text.  While we can observe a few gaps and clusters in the occurence of red and white, this certainly indicates that they are used fairly consistently throughout the course of the text.
@@ -201,20 +201,20 @@ Let's first look at the adjacency matrix for white:
 
 $$
 \begin{array}{r|ccccccc}
-&amp; white &amp; figure &amp; teeth &amp; skin &amp; face &amp; hair &amp; moustache &amp; Dracula &amp; Lucy &amp; Van Helsing &amp; Mina &amp; Jonathan \\
+& white & figure & teeth & skin & face & hair & moustache & Dracula & Lucy & Van Helsing & Mina & Jonathan \\
 \hline
-white       &amp; 0  &amp; 17 &amp; 15 &amp; 11 &amp; 9  &amp; 6  &amp; 4  &amp; 28 &amp; 21 &amp; 3  &amp; 4  &amp; 1 \\
-figure      &amp; 17 &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 5  &amp; 9  &amp; 0  &amp; 0  &amp; 0  \\
-teeth       &amp; 15 &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 11 &amp; 3  &amp; 0  &amp; 0  &amp; 0  \\
-skin        &amp; 11 &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 2  &amp; 7  &amp; 0  &amp; 2  &amp; 0  \\
-face        &amp; 9  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 3  &amp; 2  &amp; 2  &amp; 2  &amp; 0  \\
-hair        &amp; 6  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 3  &amp; 0  &amp; 1  &amp; 0  &amp; 1  \\
-moustache   &amp; 4  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 4  &amp; 0  &amp; 0  &amp; 0  &amp; 0  \\
-Dracula     &amp; 28 &amp; 5  &amp; 11 &amp; 2  &amp; 3  &amp; 3  &amp; 4  &amp; 0  &amp; 1  &amp; 1  &amp; 1  &amp; 1  \\
-Lucy        &amp; 21 &amp; 9  &amp; 3  &amp; 7  &amp; 3  &amp; 0  &amp; 0  &amp; 1  &amp; 0  &amp; 1  &amp; 1  &amp; 0  \\
-Van Helsing &amp; 3  &amp; 0  &amp; 0  &amp; 0  &amp; 3  &amp; 1  &amp; 0  &amp; 1  &amp; 1  &amp; 0  &amp; 0  &amp; 1  \\
-Mina        &amp; 4  &amp; 0  &amp; 0  &amp; 2  &amp; 3  &amp; 0  &amp; 0  &amp; 1  &amp; 1  &amp; 0  &amp; 0  &amp; 1  \\
-Jonathan    &amp; 1  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 1  &amp; 0  &amp; 1  &amp; 0  &amp; 1  &amp; 1  &amp; 0  \\
+white       & 0  & 17 & 15 & 11 & 9  & 6  & 4  & 28 & 21 & 3  & 4  & 1 \\
+figure      & 17 & 0  & 0  & 0  & 0  & 0  & 0  & 5  & 9  & 0  & 0  & 0  \\
+teeth       & 15 & 0  & 0  & 0  & 0  & 0  & 0  & 11 & 3  & 0  & 0  & 0  \\
+skin        & 11 & 0  & 0  & 0  & 0  & 0  & 0  & 2  & 7  & 0  & 2  & 0  \\
+face        & 9  & 0  & 0  & 0  & 0  & 0  & 0  & 3  & 2  & 2  & 2  & 0  \\
+hair        & 6  & 0  & 0  & 0  & 0  & 0  & 0  & 3  & 0  & 1  & 0  & 1  \\
+moustache   & 4  & 0  & 0  & 0  & 0  & 0  & 0  & 4  & 0  & 0  & 0  & 0  \\
+Dracula     & 28 & 5  & 11 & 2  & 3  & 3  & 4  & 0  & 1  & 1  & 1  & 1  \\
+Lucy        & 21 & 9  & 3  & 7  & 3  & 0  & 0  & 1  & 0  & 1  & 1  & 0  \\
+Van Helsing & 3  & 0  & 0  & 0  & 3  & 1  & 0  & 1  & 1  & 0  & 0  & 1  \\
+Mina        & 4  & 0  & 0  & 2  & 3  & 0  & 0  & 1  & 1  & 0  & 0  & 1  \\
+Jonathan    & 1  & 0  & 0  & 0  & 0  & 1  & 0  & 1  & 0  & 1  & 1  & 0  \\
 \end{array}
 $$
 
@@ -226,13 +226,13 @@ If we now use this to look at the sum of the elements in a character's vector, t
 
 $$
 \begin{array}{r|c}
-Character &amp; Sum \\
+Character & Sum \\
 \hline
-Dracula &amp; 62 \\
-Lucy &amp; 46 \\
-Mina &amp; 10 \\
-Van Helsing &amp; 12 \\
-Jonathan &amp; 5 \\
+Dracula & 62 \\
+Lucy & 46 \\
+Mina & 10 \\
+Van Helsing & 12 \\
+Jonathan & 5 \\
 \end{array}
 $$
 
@@ -262,13 +262,13 @@ print(a_2)
 with the character vector sums
 $$
 \begin{array}{r|c}
-Character &amp; Sum \\
+Character & Sum \\
 \hline
-Dracula &amp; 4042 \\
-Lucy &amp; 3155 \\
-Mina &amp; 685 \\
-Van Helsing &amp; 533 \\
-Jonathan &amp; 212 \\
+Dracula & 4042 \\
+Lucy & 3155 \\
+Mina & 685 \\
+Van Helsing & 533 \\
+Jonathan & 212 \\
 \end{array}
 $$
 
@@ -295,13 +295,13 @@ with the character vector sums
 
 $$
 \begin{array}{r|c}
-Character &amp; Sum \\
+Character & Sum \\
 \hline
-Dracula &amp; 177389 \\
-Lucy &amp; 142281 \\
-Mina &amp; 31892 \\
-Van Helsing &amp; 25058 \\
-Jonathan &amp; 10362 \\
+Dracula & 177389 \\
+Lucy & 142281 \\
+Mina & 31892 \\
+Van Helsing & 25058 \\
+Jonathan & 10362 \\
 \end{array}
 $$
 
@@ -311,20 +311,20 @@ First, we have the adjacency matrix for red:
 
 $$
 \begin{array}{r|ccccccc}
-&amp; red &amp; eyes &amp; light &amp; lips &amp; mark &amp; scar &amp; sun &amp; Dracula &amp; Lucy &amp; Van Helsing &amp; Mina &amp; Jonathan \\
+& red & eyes & light & lips & mark & scar & sun & Dracula & Lucy & Van Helsing & Mina & Jonathan \\
 \hline
-red         &amp; 0  &amp; 12 &amp; 8  &amp; 7  &amp; 6  &amp; 6  &amp; 5  &amp; 23 &amp; 6  &amp; 0  &amp; 9  &amp; 0 \\
-eyes        &amp; 12 &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 11 &amp; 0  &amp; 0  &amp; 1  &amp; 0  \\
-light       &amp; 8  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 3  &amp; 2  &amp; 0  &amp; 0  &amp; 0  \\
-lips        &amp; 7  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 6  &amp; 1  &amp; 0  &amp; 0  &amp; 0  \\
-mark        &amp; 6  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 3  &amp; 0  &amp; 3  &amp; 0  \\
-scar        &amp; 6  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 2  &amp; 0  &amp; 0  &amp; 4  &amp; 0  \\
-sun         &amp; 5  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 1  &amp; 0  &amp; 0  &amp; 1  &amp; 0  \\
-Dracula     &amp; 23 &amp; 11 &amp; 3  &amp; 6  &amp; 0  &amp; 2  &amp; 1  &amp; 0  &amp; 1  &amp; 1  &amp; 1  &amp; 1  \\
-Lucy        &amp; 6  &amp; 0  &amp; 2  &amp; 1  &amp; 3  &amp; 0  &amp; 0  &amp; 1  &amp; 0  &amp; 1  &amp; 1  &amp; 0  \\
-Van Helsing &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 1  &amp; 1  &amp; 0  &amp; 0  &amp; 1  \\
-Mina        &amp; 9  &amp; 1  &amp; 0  &amp; 0  &amp; 3  &amp; 4  &amp; 1  &amp; 1  &amp; 1  &amp; 0  &amp; 0  &amp; 1  \\
-Jonathan    &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 0  &amp; 1  &amp; 0  &amp; 1  &amp; 1  &amp; 0  \\
+red         & 0  & 12 & 8  & 7  & 6  & 6  & 5  & 23 & 6  & 0  & 9  & 0 \\
+eyes        & 12 & 0  & 0  & 0  & 0  & 0  & 0  & 11 & 0  & 0  & 1  & 0  \\
+light       & 8  & 0  & 0  & 0  & 0  & 0  & 0  & 3  & 2  & 0  & 0  & 0  \\
+lips        & 7  & 0  & 0  & 0  & 0  & 0  & 0  & 6  & 1  & 0  & 0  & 0  \\
+mark        & 6  & 0  & 0  & 0  & 0  & 0  & 0  & 0  & 3  & 0  & 3  & 0  \\
+scar        & 6  & 0  & 0  & 0  & 0  & 0  & 0  & 2  & 0  & 0  & 4  & 0  \\
+sun         & 5  & 0  & 0  & 0  & 0  & 0  & 0  & 1  & 0  & 0  & 1  & 0  \\
+Dracula     & 23 & 11 & 3  & 6  & 0  & 2  & 1  & 0  & 1  & 1  & 1  & 1  \\
+Lucy        & 6  & 0  & 2  & 1  & 3  & 0  & 0  & 1  & 0  & 1  & 1  & 0  \\
+Van Helsing & 0  & 0  & 0  & 0  & 0  & 0  & 0  & 1  & 1  & 0  & 0  & 1  \\
+Mina        & 9  & 1  & 0  & 0  & 3  & 4  & 1  & 1  & 1  & 0  & 0  & 1  \\
+Jonathan    & 0  & 0  & 0  & 0  & 0  & 0  & 0  & 1  & 0  & 1  & 1  & 0  \\
 \end{array}
 $$
 
@@ -333,29 +333,29 @@ Now we would like to inspect the character vector sums for the adjacency matrice
 $$
 \begin{array}{ccc}
 \begin{array}{r|c}
-Character &amp; Sum \\
+Character & Sum \\
 \hline
-Dracula &amp; 50 \\
-Mina &amp; 21 \\
-Lucy &amp; 15 \\
-Jonathan &amp; 3 \\
-Van Helsing &amp; 3 \\
-\end{array} &amp; \begin{array}{r|c}
-Character &amp; Sum \\
+Dracula & 50 \\
+Mina & 21 \\
+Lucy & 15 \\
+Jonathan & 3 \\
+Van Helsing & 3 \\
+\end{array} & \begin{array}{r|c}
+Character & Sum \\
 \hline
-Dracula &amp; 2346 \\
-Mina &amp; 921 \\
-Lucy &amp; 642 \\
-Jonathan &amp; 74 \\
-Van Helsing &amp; 68 \\
-\end{array} &amp; \begin{array}{r|c}
-Character &amp; Sum \\
+Dracula & 2346 \\
+Mina & 921 \\
+Lucy & 642 \\
+Jonathan & 74 \\
+Van Helsing & 68 \\
+\end{array} & \begin{array}{r|c}
+Character & Sum \\
 \hline
-Dracula &amp; 76739 \\
-Mina &amp; 28484 \\
-Lucy &amp; 20284 \\
-Jonathan &amp; 3335 \\
-Van Helsing &amp; 3062 \\
+Dracula & 76739 \\
+Mina & 28484 \\
+Lucy & 20284 \\
+Jonathan & 3335 \\
+Van Helsing & 3062 \\
 \end{array} \\
 \end{array}
 $$
@@ -365,7 +365,7 @@ And, again we see that Dracula holds the first position (although, he holds a ve
 Now that we have collected our results, let's turn to providing some interpretation.
 
 <h2>Interpretation</h2>
-If we look at our linear algebraic results for white, we find that Dracula and Mina are almost equally central and have approximately 5 times as many connections as the other characters.  To be clear, we should not expect any character to have zero connections, both because they are connected to the other charactes and Stoker's use of a general color does not need to be unifaceted.  The proportions of how white is used are the real clues.  But, what attribute do Dracula and Lucy possess (or lack) that the other characters do not? To answer this, let's look at the specific nouns associated to white, namely figure, teeth, skin, face, hair, and moustache. All of these are associated with the body, but more precisely, all of these are the whitened versions that we would expect to see in a corpse.  Particularly in the use of figure, skin, and face, Stoker deliberately reminds the reader that Dracula and Mina are the "dead Un-Dead". Thus, we should not picture them as having the usual pigmentation that we would expect, but rather as walking corpses.  Stoker's use of hair and moustache are much the same, although this is slightly complicated by Van Helsing being old and having white hair.  The interpretation for teeth is two-fold: (i) exposed teeth also signify a corpse; (ii) they are Dracula's means for bringing about death.  While I do not want to wander too deep into corroborating textual evidence, I think it is noteworthy that Stoker directly references the legend of the <a>white lady</a> in chapter six. Ultimately, Stoker's use of the color white is very strongly associated with death, and it serves as a useful reminder of the strange nature of Dracula and his victim in a time where the images of vampires, zombies, and the living undead were not widespread in the culture, as they are today.
+If we look at our linear algebraic results for white, we find that Dracula and Mina are almost equally central and have approximately 5 times as many connections as the other characters.  To be clear, we should not expect any character to have zero connections, both because they are connected to the other charactes and Stoker's use of a general color does not need to be unifaceted.  The proportions of how white is used are the real clues.  But, what attribute do Dracula and Lucy possess (or lack) that the other characters do not? To answer this, let's look at the specific nouns associated to white, namely figure, teeth, skin, face, hair, and moustache. All of these are associated with the body, but more precisely, all of these are the whitened versions that we would expect to see in a corpse.  Particularly in the use of figure, skin, and face, Stoker deliberately reminds the reader that Dracula and Mina are the "dead Un-Dead". Thus, we should not picture them as having the usual pigmentation that we would expect, but rather as walking corpses.  Stoker's use of hair and moustache are much the same, although this is slightly complicated by Van Helsing being old and having white hair.  The interpretation for teeth is two-fold: (i) exposed teeth also signify a corpse; (ii) they are Dracula's means for bringing about death.  While I do not want to wander too deep into corroborating textual evidence, I think it is noteworthy that Stoker directly references the legend of the <a href="https://en.wikipedia.org/wiki/White_Lady_(ghost)" target="_blank">white lady</a> in chapter six. Ultimately, Stoker's use of the color white is very strongly associated with death, and it serves as a useful reminder of the strange nature of Dracula and his victim in a time where the images of vampires, zombies, and the living undead were not widespread in the culture, as they are today.
 
 If we look at our linear algebraic results for red, we find that Dracula is incredibly central relative to the other characters and that Mina and Lucy have 7-9 times more connections than Jonathan and Van Helsing.  These proportions are rather curious: what is it that Dracula has a lot of, Mina and Lucy have a good deal of, and Jonathan and Van Helsing have very little of? Again, to answer this we need to look at the specific nouns associated to red, namely eyes, light, lips, mark, scar, and sun.  From reading the text, red light and the red sun are used to paint a particular scene, well, red.  Light is also used in the sense of the light in his eyes, creating a bridge to the other four nouns.  Eyes, lips, mark, and scar all connect to organs that can be flushed with blood.  That is to say, all of the nouns express a notion that a character or an environment are bathed in blood, the very thing that nourishes the vampire characters.  As such, Stoker uses red to signify appetite, and you could argue a deranged or animalistic version of appetite at that (note: you could certainly read "sensuality" or "carnality" here and I wouldn't argue much, but I think the baser version "appetite" is more accurate).  Dracula and Lucy's connection with appetite are clear as Stoker demonstrates them feeding, but Mina is slightly more nuanced.  Mina begins the transformation to vampire and hence is strongly connected to red, but she never completes this transformation by dying.  This is consistent with our results above that Mina is not strongly associated with white and death.
 
@@ -377,7 +377,7 @@ Ultimately, besides attempting to find a somewhat novel use of matrices and matr
 In the beginning, I claimed that Dracula's character almost exclusively consists of death and appetite.  I have not shown this exclusitivity yet, and perhaps while he possesses these traits he may have many other good traits that create a nuanced character.  Within the text, this is not the case though.  To substantiate this, we could apply similar methods to the other common adjectives to see Dracula's connection to those with a positive or negative connotation.  Instead, I think it would be a better use of your time to read the original novel, create your own arguments, and draw your own conclusions.  Happy reading.
 
 <h2>Appedix: Tools Used</h2>
-To do our textual analysis, we will use the Natural Language Toolkit, <a>NLTK</a>.  It has a very interesting book that will walk you through some common techniques of natural language process, if you are interested.
+To do our textual analysis, we will use the Natural Language Toolkit, <a href="https://www.nltk.org/" target="_blank">NLTK</a>.  It has a very interesting book that will walk you through some common techniques of natural language process, if you are interested.
 
 First, we need to install the package and setup our other libraries:
 
@@ -459,7 +459,7 @@ text.dispersion_plot(['red','white','green','blue','yellow','purple','black'])
 ```
 
 
-![png](output_39_0.png)
+![png](./images/adjacency-matrices-for-descriptors-in-dracula/output_39_0.png)
 
 
 note: we could use blood as a strong signifier of red, and it would match our results.  I would prefer to keep it more direct for this article.

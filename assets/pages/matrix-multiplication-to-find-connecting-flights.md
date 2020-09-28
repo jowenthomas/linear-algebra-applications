@@ -39,12 +39,7 @@ plt.imshow(small)
 
 
 
-    <matplotlib.image.AxesImage at 0x7ff1e9334550>
-
-
-
-
-![png](output_4_1.png)
+![png](./images/matrix-multiplication-to-find-connecting-flights/output_4_1.png)
 
 
 This provides a convenient way to visualize the task at hand. We can readily see that SAN and EWR are not connected, telling us that their is no direct flight.  Furthermore, it is rather simple to trace the possible paths between our starting and end points.  For example, we can readily read off that we could travel through DEN and ORD or we could travel through DEN and DAL.
@@ -58,14 +53,14 @@ While the above graph is easy enough to analyze visually, we can use an adjacenc
 
 $$
 \begin{array}{r|cccccc}
-&amp; SAN &amp; DEN &amp; DAL &amp; ORD &amp; DCA &amp; EWR \\
+& SAN & DEN & DAL & ORD & DCA & EWR \\
 \hline
-SAN      &amp; 0  &amp; 1  &amp; 0  &amp; 0  &amp; 0  &amp; 0  \\
-DEN      &amp; 1  &amp; 0  &amp; 1  &amp; 1  &amp; 0  &amp; 0  \\
-DAL      &amp; 0  &amp; 1  &amp; 0  &amp; 1  &amp; 1  &amp; 1  \\
-ORD      &amp; 0  &amp; 1  &amp; 1  &amp; 0  &amp; 0  &amp; 1  \\
-DCA      &amp; 0  &amp; 0  &amp; 1  &amp; 0  &amp; 0  &amp; 1  \\
-EWR      &amp; 0  &amp; 0  &amp; 1  &amp; 1  &amp; 1  &amp; 0  \\
+SAN      & 0  & 1  & 0  & 0  & 0  & 0  \\
+DEN      & 1  & 0  & 1  & 1  & 0  & 0  \\
+DAL      & 0  & 1  & 0  & 1  & 1  & 1  \\
+ORD      & 0  & 1  & 1  & 0  & 0  & 1  \\
+DCA      & 0  & 0  & 1  & 0  & 0  & 1  \\
+EWR      & 0  & 0  & 1  & 1  & 1  & 0  \\
 \end{array}
 $$
 
@@ -75,14 +70,14 @@ For the problem at hand we note that $s_{SAN,EWR} = 0$, which indicates that the
 $$
 S^2 = 
 \begin{array}{r|cccccc}
-&amp; SAN &amp; DEN &amp; DAL &amp; ORD &amp; DCA &amp; EWR \\
+& SAN & DEN & DAL & ORD & DCA & EWR \\
 \hline
-SAN      &amp; 1  &amp; 0  &amp; 1  &amp; 1  &amp; 0  &amp; 0  \\
-DEN      &amp; 0  &amp; 3  &amp; 1  &amp; 1  &amp; 1  &amp; 2  \\
-DAL      &amp; 1  &amp; 1  &amp; 4  &amp; 2  &amp; 1  &amp; 2  \\
-ORD      &amp; 1  &amp; 1  &amp; 2  &amp; 3  &amp; 2  &amp; 1  \\
-DCA      &amp; 0  &amp; 1  &amp; 1  &amp; 2  &amp; 2  &amp; 1  \\
-EWR      &amp; 0  &amp; 2  &amp; 2  &amp; 1  &amp; 1  &amp; 3  \\
+SAN      & 1  & 0  & 1  & 1  & 0  & 0  \\
+DEN      & 0  & 3  & 1  & 1  & 1  & 2  \\
+DAL      & 1  & 1  & 4  & 2  & 1  & 2  \\
+ORD      & 1  & 1  & 2  & 3  & 2  & 1  \\
+DCA      & 0  & 1  & 1  & 2  & 2  & 1  \\
+EWR      & 0  & 2  & 2  & 1  & 1  & 3  \\
 \end{array}
 $$
 
@@ -94,14 +89,14 @@ So, we have shown that there are no walks of length one (direct flight) nor walk
 $$
 S^3 = 
 \begin{array}{r|cccccc}
-&amp; SAN &amp; DEN &amp; DAL &amp; ORD &amp; DCA &amp; EWR \\
+& SAN & DEN & DAL & ORD & DCA & EWR \\
 \hline
-SAN      &amp; 0 &amp; 3 &amp; 1 &amp; 1 &amp; 1 &amp; 2  \\
-DEN      &amp; 3 &amp; 2 &amp; 7 &amp; 6 &amp; 3 &amp; 3  \\
-DAL      &amp; 1 &amp; 7 &amp; 6 &amp; 7 &amp; 6 &amp; 7  \\
-ORD      &amp; 1 &amp; 6 &amp; 7 &amp; 4 &amp; 3 &amp; 7  \\
-DCA      &amp; 1 &amp; 3 &amp; 6 &amp; 3 &amp; 2 &amp; 5  \\
-EWR      &amp; 2 &amp; 3 &amp; 7 &amp; 7 &amp; 5 &amp; 4  \\
+SAN      & 0 & 3 & 1 & 1 & 1 & 2  \\
+DEN      & 3 & 2 & 7 & 6 & 3 & 3  \\
+DAL      & 1 & 7 & 6 & 7 & 6 & 7  \\
+ORD      & 1 & 6 & 7 & 4 & 3 & 7  \\
+DCA      & 1 & 3 & 6 & 3 & 2 & 5  \\
+EWR      & 2 & 3 & 7 & 7 & 5 & 4  \\
 \end{array}
 $$
 
@@ -125,12 +120,7 @@ plt.imshow(large)
 
 
 
-    <matplotlib.image.AxesImage at 0x7ff1e928f860>
-
-
-
-
-![png](output_8_1.png)
+![png](./images/matrix-multiplication-to-find-connecting-flights/output_8_1.png)
 
 
 I think it's fair to say that the shortest path between SAN and EWR doesn't exactly jump off the page.  At a glance, it's hard enough to discern if SAN and EWR are connected. While we could spend our time unraveling this mess or perhaps get a little more creative with spacing or coloring, the point here is that the adjacency matrix is just as easy to read as the one above:
@@ -138,26 +128,26 @@ I think it's fair to say that the shortest path between SAN and EWR doesn't exac
 $$
 L = 
 \begin{array}{r|cccccccccccccccccc}
-&amp; JFK &amp; BOS &amp; BTV &amp; ORD &amp; BMI &amp; LNK &amp; DEN &amp; SEA &amp; PDX &amp; SAN &amp; SAF &amp; DAL &amp; MSY &amp; MCO &amp; ATL &amp; DCA &amp; PHL &amp; EWR \\
+& JFK & BOS & BTV & ORD & BMI & LNK & DEN & SEA & PDX & SAN & SAF & DAL & MSY & MCO & ATL & DCA & PHL & EWR \\
 \hline
-JFK &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0  \\
-BOS &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0  \\  
-BTV &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1  \\  
-ORD &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0  \\  
-BMI &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0  \\  
-LNK &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0  \\  
-DEN &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0  \\  
-SEA &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 0  \\  
-PDX &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 1  \\  
-SAN &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0  \\  
-SAF &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0  \\  
-DAL &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0  \\  
-MSY &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1  \\ 
-MCO &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 0  \\  
-ATL &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0  \\  
-DCA &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 0  \\  
-PHL &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0  \\  
-EWR &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0  \\
+JFK & 0 & 1 & 0 & 1 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 & 0  \\
+BOS & 1 & 0 & 0 & 1 & 0 & 1 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 1 & 1 & 1 & 0 & 0  \\  
+BTV & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 1 & 1  \\  
+ORD & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0  \\  
+BMI & 1 & 0 & 1 & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0  \\  
+LNK & 0 & 1 & 0 & 0 & 1 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0  \\  
+DEN & 0 & 1 & 1 & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0  \\  
+SEA & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 0 & 1 & 1 & 0 & 0 & 1 & 0 & 1 & 1 & 1 & 0  \\  
+PDX & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 1 & 0 & 1  \\  
+SAN & 0 & 1 & 0 & 0 & 1 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0  \\  
+SAF & 0 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 0  \\  
+DAL & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 1 & 0  \\  
+MSY & 1 & 0 & 1 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1  \\ 
+MCO & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & 1 & 1 & 1 & 0 & 0 & 0 & 1 & 1 & 1 & 0  \\  
+ATL & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 0  \\  
+DCA & 0 & 1 & 0 & 0 & 1 & 1 & 0 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 1 & 0 & 1 & 0  \\  
+PHL & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 0  \\  
+EWR & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0  \\
 \end{array}
 $$
 
@@ -168,26 +158,26 @@ Next, we should check for a walk of length 2, by inspecting $L^2$:
 $$
 L^2 = 
 \begin{array}{r|cccccccccccccccccc}
-&amp; JFK &amp; BOS &amp; BTV &amp; ORD &amp; BMI &amp; LNK &amp; DEN &amp; SEA &amp; PDX &amp; SAN &amp; SAF &amp; DAL &amp; MSY &amp; MCO &amp; ATL &amp; DCA &amp; PHL &amp; EWR \\
+& JFK & BOS & BTV & ORD & BMI & LNK & DEN & SEA & PDX & SAN & SAF & DAL & MSY & MCO & ATL & DCA & PHL & EWR \\
 \hline
-JFK &amp; 6 &amp; 1 &amp; 3 &amp; 1 &amp; 0 &amp; 2 &amp; 2 &amp; 4 &amp; 0 &amp; 2 &amp; 1 &amp; 1 &amp; 0 &amp; 3 &amp; 1 &amp; 5 &amp; 0 &amp; 2  \\
-BOS &amp; 1 &amp; 8 &amp; 1 &amp; 1 &amp; 4 &amp; 3 &amp; 2 &amp; 5 &amp; 3 &amp; 3 &amp; 3 &amp; 2 &amp; 3 &amp; 4 &amp; 2 &amp; 4 &amp; 3 &amp; 0  \\
-BTV &amp; 3 &amp; 1 &amp; 6 &amp; 0 &amp; 0 &amp; 2 &amp; 2 &amp; 4 &amp; 2 &amp; 2 &amp; 1 &amp; 3 &amp; 2 &amp; 2 &amp; 0 &amp; 4 &amp; 0 &amp; 1  \\
-ORD &amp; 1 &amp; 1 &amp; 0 &amp; 2 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 0  \\ 
-BMI &amp; 0 &amp; 4 &amp; 0 &amp; 1 &amp; 6 &amp; 2 &amp; 4 &amp; 3 &amp; 3 &amp; 2 &amp; 2 &amp; 0 &amp; 4 &amp; 3 &amp; 2 &amp; 3 &amp; 4 &amp; 1  \\  
-LNK &amp; 2 &amp; 3 &amp; 2 &amp; 1 &amp; 2 &amp; 6 &amp; 2 &amp; 3 &amp; 3 &amp; 6 &amp; 3 &amp; 1 &amp; 3 &amp; 2 &amp; 4 &amp; 4 &amp; 3 &amp; 0  \\  
-DEN &amp; 2 &amp; 2 &amp; 2 &amp; 1 &amp; 4 &amp; 2 &amp; 8 &amp; 3 &amp; 2 &amp; 2 &amp; 2 &amp; 1 &amp; 2 &amp; 4 &amp; 3 &amp; 6 &amp; 3 &amp; 2  \\  
-SEA &amp; 4 &amp; 5 &amp; 4 &amp; 0 &amp; 3 &amp; 3 &amp; 3 &amp; 9 &amp; 1 &amp; 3 &amp; 3 &amp; 3 &amp; 2 &amp; 6 &amp; 1 &amp; 7 &amp; 1 &amp; 2  \\  
-PDX &amp; 0 &amp; 3 &amp; 2 &amp; 1 &amp; 3 &amp; 3 &amp; 2 &amp; 1 &amp; 6 &amp; 3 &amp; 2 &amp; 1 &amp; 4 &amp; 2 &amp; 3 &amp; 3 &amp; 4 &amp; 0  \\  
-SAN &amp; 2 &amp; 3 &amp; 2 &amp; 1 &amp; 2 &amp; 6 &amp; 2 &amp; 3 &amp; 3 &amp; 6 &amp; 3 &amp; 1 &amp; 3 &amp; 2 &amp; 4 &amp; 4 &amp; 3 &amp; 0  \\  
-SAF &amp; 1 &amp; 3 &amp; 1 &amp; 0 &amp; 2 &amp; 3 &amp; 2 &amp; 3 &amp; 2 &amp; 3 &amp; 6 &amp; 1 &amp; 3 &amp; 2 &amp; 3 &amp; 2 &amp; 4 &amp; 2  \\  
-DAL &amp; 1 &amp; 2 &amp; 3 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 3 &amp; 1 &amp; 1 &amp; 1 &amp; 4 &amp; 1 &amp; 3 &amp; 0 &amp; 3 &amp; 0 &amp; 0  \\ 
-MSY &amp; 0 &amp; 3 &amp; 2 &amp; 1 &amp; 4 &amp; 3 &amp; 2 &amp; 2 &amp; 4 &amp; 3 &amp; 3 &amp; 1 &amp; 6 &amp; 1 &amp; 2 &amp; 1 &amp; 4 &amp; 1  \\  
-MCO &amp; 3 &amp; 4 &amp; 2 &amp; 1 &amp; 3 &amp; 2 &amp; 4 &amp; 6 &amp; 2 &amp; 2 &amp; 2 &amp; 3 &amp; 1 &amp; 8 &amp; 2 &amp; 7 &amp; 1 &amp; 1  \\  
-ATL &amp; 1 &amp; 2 &amp; 0 &amp; 1 &amp; 2 &amp; 4 &amp; 3 &amp; 1 &amp; 3 &amp; 4 &amp; 3 &amp; 0 &amp; 2 &amp; 2 &amp; 5 &amp; 3 &amp; 4 &amp; 0  \\  
-DCA &amp; 5 &amp; 4 &amp; 4 &amp; 1 &amp; 3 &amp; 4 &amp; 6 &amp; 7 &amp; 3 &amp; 4 &amp; 2 &amp; 3 &amp; 1 &amp; 7 &amp; 3 &amp; 11 &amp; 2 &amp; 2  \\  
-PHL &amp; 0 &amp; 3 &amp; 0 &amp; 1 &amp; 4 &amp; 3 &amp; 3 &amp; 1 &amp; 4 &amp; 3 &amp; 4 &amp; 0 &amp; 4 &amp; 1 &amp; 4 &amp; 2 &amp; 6 &amp; 1  \\  
-EWR &amp; 2 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 2 &amp; 2 &amp; 0 &amp; 0 &amp; 2 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 2 &amp; 1 &amp; 3  \\
+JFK & 6 & 1 & 3 & 1 & 0 & 2 & 2 & 4 & 0 & 2 & 1 & 1 & 0 & 3 & 1 & 5 & 0 & 2  \\
+BOS & 1 & 8 & 1 & 1 & 4 & 3 & 2 & 5 & 3 & 3 & 3 & 2 & 3 & 4 & 2 & 4 & 3 & 0  \\
+BTV & 3 & 1 & 6 & 0 & 0 & 2 & 2 & 4 & 2 & 2 & 1 & 3 & 2 & 2 & 0 & 4 & 0 & 1  \\
+ORD & 1 & 1 & 0 & 2 & 1 & 1 & 1 & 0 & 1 & 1 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 0  \\ 
+BMI & 0 & 4 & 0 & 1 & 6 & 2 & 4 & 3 & 3 & 2 & 2 & 0 & 4 & 3 & 2 & 3 & 4 & 1  \\  
+LNK & 2 & 3 & 2 & 1 & 2 & 6 & 2 & 3 & 3 & 6 & 3 & 1 & 3 & 2 & 4 & 4 & 3 & 0  \\  
+DEN & 2 & 2 & 2 & 1 & 4 & 2 & 8 & 3 & 2 & 2 & 2 & 1 & 2 & 4 & 3 & 6 & 3 & 2  \\  
+SEA & 4 & 5 & 4 & 0 & 3 & 3 & 3 & 9 & 1 & 3 & 3 & 3 & 2 & 6 & 1 & 7 & 1 & 2  \\  
+PDX & 0 & 3 & 2 & 1 & 3 & 3 & 2 & 1 & 6 & 3 & 2 & 1 & 4 & 2 & 3 & 3 & 4 & 0  \\  
+SAN & 2 & 3 & 2 & 1 & 2 & 6 & 2 & 3 & 3 & 6 & 3 & 1 & 3 & 2 & 4 & 4 & 3 & 0  \\  
+SAF & 1 & 3 & 1 & 0 & 2 & 3 & 2 & 3 & 2 & 3 & 6 & 1 & 3 & 2 & 3 & 2 & 4 & 2  \\  
+DAL & 1 & 2 & 3 & 0 & 0 & 1 & 1 & 3 & 1 & 1 & 1 & 4 & 1 & 3 & 0 & 3 & 0 & 0  \\ 
+MSY & 0 & 3 & 2 & 1 & 4 & 3 & 2 & 2 & 4 & 3 & 3 & 1 & 6 & 1 & 2 & 1 & 4 & 1  \\  
+MCO & 3 & 4 & 2 & 1 & 3 & 2 & 4 & 6 & 2 & 2 & 2 & 3 & 1 & 8 & 2 & 7 & 1 & 1  \\  
+ATL & 1 & 2 & 0 & 1 & 2 & 4 & 3 & 1 & 3 & 4 & 3 & 0 & 2 & 2 & 5 & 3 & 4 & 0  \\  
+DCA & 5 & 4 & 4 & 1 & 3 & 4 & 6 & 7 & 3 & 4 & 2 & 3 & 1 & 7 & 3 & 11 & 2 & 2  \\  
+PHL & 0 & 3 & 0 & 1 & 4 & 3 & 3 & 1 & 4 & 3 & 4 & 0 & 4 & 1 & 4 & 2 & 6 & 1  \\  
+EWR & 2 & 0 & 1 & 0 & 1 & 0 & 2 & 2 & 0 & 0 & 2 & 0 & 1 & 1 & 0 & 2 & 1 & 3  \\
 \end{array}
 $$
 
@@ -198,26 +188,26 @@ Next, we should check for a walk of length 3, by inspecting $L^3$:
 $$
 L^3 = 
 \begin{array}{r|cccccccccccccccccc}
-&amp; JFK &amp; BOS &amp; BTV &amp; ORD &amp; BMI &amp; LNK &amp; DEN &amp; SEA &amp; PDX &amp; SAN &amp; SAF &amp; DAL &amp; MSY &amp; MCO &amp; ATL &amp; DCA &amp; PHL &amp; EWR \\
+& JFK & BOS & BTV & ORD & BMI & LNK & DEN & SEA & PDX & SAN & SAF & DAL & MSY & MCO & ATL & DCA & PHL & EWR \\
 \hline
-JFK &amp; 2 &amp; 22 &amp; 5 &amp; 7 &amp; 22 &amp; 15 &amp; 14 &amp; 12 &amp; 21 &amp; 15 &amp; 14 &amp; 4 &amp; 22 &amp; 12 &amp; 14 &amp; 14 &amp; 22 &amp; 3  \\
-BOS &amp; 22 &amp; 20 &amp; 15 &amp; 9 &amp; 17 &amp; 27 &amp; 28 &amp; 27 &amp; 17 &amp; 27 &amp; 16 &amp; 10 &amp; 13 &amp; 29 &amp; 23 &amp; 41 &amp; 17 &amp; 7  \\
-BTV &amp; 5 &amp; 15 &amp; 6 &amp; 4 &amp; 21 &amp; 13 &amp; 21 &amp; 14 &amp; 15 &amp; 13 &amp; 19 &amp; 3 &amp; 20 &amp; 12 &amp; 14 &amp; 16 &amp; 22 &amp; 10  \\
-ORD &amp; 7 &amp; 9 &amp; 4 &amp; 2 &amp; 4 &amp; 5 &amp; 4 &amp; 9 &amp; 3 &amp; 5 &amp; 4 &amp; 3 &amp; 3 &amp; 7 &amp; 3 &amp; 9 &amp; 3 &amp; 2  \\ 
-BMI &amp; 22 &amp; 17 &amp; 21 &amp; 4 &amp; 10 &amp; 23 &amp; 17 &amp; 30 &amp; 12 &amp; 23 &amp; 13 &amp; 12 &amp; 11 &amp; 22 &amp; 13 &amp; 35 &amp; 9 &amp; 7  \\  
-LNK &amp; 15 &amp; 27 &amp; 13 &amp; 5 &amp; 23 &amp; 16 &amp; 27 &amp; 33 &amp; 14 &amp; 16 &amp; 14 &amp; 12 &amp; 13 &amp; 32 &amp; 13 &amp; 38 &amp; 14 &amp; 8  \\  
-DEN &amp; 14 &amp; 28 &amp; 21 &amp; 4 &amp; 17 &amp; 27 &amp; 16 &amp; 32 &amp; 19 &amp; 27 &amp; 23 &amp; 16 &amp; 23 &amp; 22 &amp; 16 &amp; 29 &amp; 18 &amp; 6  \\  
-SEA &amp; 12 &amp; 27 &amp; 14 &amp; 9 &amp; 30 &amp; 33 &amp; 32 &amp; 24 &amp; 31 &amp; 33 &amp; 24 &amp; 8 &amp; 29 &amp; 24 &amp; 30 &amp; 37 &amp; 33 &amp; 7  \\  
-PDX &amp; 21 &amp; 17 &amp; 15 &amp; 3 &amp; 12 &amp; 14 &amp; 19 &amp; 31 &amp; 8 &amp; 14 &amp; 16 &amp; 11 &amp; 8 &amp; 27 &amp; 10 &amp; 34 &amp; 9 &amp; 12  \\  
-SAN &amp; 15 &amp; 27 &amp; 13 &amp; 5 &amp; 23 &amp; 16 &amp; 27 &amp; 33 &amp; 14 &amp; 16 &amp; 14 &amp; 12 &amp; 13 &amp; 32 &amp; 13 &amp; 38 &amp; 14 &amp; 8  \\  
-SAF &amp; 14 &amp; 16 &amp; 19 &amp; 4 &amp; 13 &amp; 14 &amp; 23 &amp; 24 &amp; 16 &amp; 14 &amp; 10 &amp; 15 &amp; 11 &amp; 26 &amp; 11 &amp; 34 &amp; 10 &amp; 6  \\  
-DAL &amp; 4 &amp; 10 &amp; 3 &amp; 3 &amp; 12 &amp; 12 &amp; 16 &amp; 8 &amp; 11 &amp; 12 &amp; 15 &amp; 2 &amp; 11 &amp; 9 &amp; 15 &amp; 13 &amp; 17 &amp; 5  \\ 
-MSY &amp; 22 &amp; 13 &amp; 20 &amp; 3 &amp; 11 &amp; 13 &amp; 23 &amp; 29 &amp; 8 &amp; 13 &amp; 11 &amp; 11 &amp; 8 &amp; 23 &amp; 8 &amp; 35 &amp; 7 &amp; 12 \\  
-MCO &amp; 12 &amp; 29 &amp; 12 &amp; 7 &amp; 22 &amp; 32 &amp; 22 &amp; 24 &amp; 27 &amp; 32 &amp; 26 &amp; 9 &amp; 23 &amp; 22 &amp; 28 &amp; 33 &amp; 29 &amp; 5  \\  
-ATL &amp; 14 &amp; 23 &amp; 14 &amp; 3 &amp; 13 &amp; 13 &amp; 16 &amp; 30 &amp; 10 &amp; 13 &amp; 11 &amp; 15 &amp; 8 &amp; 28 &amp; 8 &amp; 32 &amp; 7 &amp; 5  \\  
-DCA &amp; 14 &amp; 41 &amp; 16 &amp; 9 &amp; 35 &amp; 38 &amp; 29 &amp; 37 &amp; 34 &amp; 38 &amp; 34 &amp; 13 &amp; 35 &amp; 33 &amp; 32 &amp; 40 &amp; 37 &amp; 8 \\  
-PHL &amp; 22 &amp; 17 &amp; 22 &amp; 3 &amp; 9 &amp; 14 &amp; 18 &amp; 33 &amp; 9 &amp; 14 &amp; 10 &amp; 17 &amp; 7 &amp; 29 &amp; 7 &amp; 37 &amp; 4 &amp; 8  \\  
-EWR &amp; 3 &amp; 7 &amp; 10 &amp; 2 &amp; 7 &amp; 8 &amp; 6 &amp; 7 &amp; 12 &amp; 8 &amp; 6 &amp; 5 &amp; 12 &amp; 5 &amp; 5 &amp; 8 &amp; 8 &amp; 2  \\
+JFK & 2 & 22 & 5 & 7 & 22 & 15 & 14 & 12 & 21 & 15 & 14 & 4 & 22 & 12 & 14 & 14 & 22 & 3  \\
+BOS & 22 & 20 & 15 & 9 & 17 & 27 & 28 & 27 & 17 & 27 & 16 & 10 & 13 & 29 & 23 & 41 & 17 & 7  \\
+BTV & 5 & 15 & 6 & 4 & 21 & 13 & 21 & 14 & 15 & 13 & 19 & 3 & 20 & 12 & 14 & 16 & 22 & 10  \\
+ORD & 7 & 9 & 4 & 2 & 4 & 5 & 4 & 9 & 3 & 5 & 4 & 3 & 3 & 7 & 3 & 9 & 3 & 2  \\ 
+BMI & 22 & 17 & 21 & 4 & 10 & 23 & 17 & 30 & 12 & 23 & 13 & 12 & 11 & 22 & 13 & 35 & 9 & 7  \\  
+LNK & 15 & 27 & 13 & 5 & 23 & 16 & 27 & 33 & 14 & 16 & 14 & 12 & 13 & 32 & 13 & 38 & 14 & 8  \\  
+DEN & 14 & 28 & 21 & 4 & 17 & 27 & 16 & 32 & 19 & 27 & 23 & 16 & 23 & 22 & 16 & 29 & 18 & 6  \\  
+SEA & 12 & 27 & 14 & 9 & 30 & 33 & 32 & 24 & 31 & 33 & 24 & 8 & 29 & 24 & 30 & 37 & 33 & 7  \\  
+PDX & 21 & 17 & 15 & 3 & 12 & 14 & 19 & 31 & 8 & 14 & 16 & 11 & 8 & 27 & 10 & 34 & 9 & 12  \\  
+SAN & 15 & 27 & 13 & 5 & 23 & 16 & 27 & 33 & 14 & 16 & 14 & 12 & 13 & 32 & 13 & 38 & 14 & 8  \\  
+SAF & 14 & 16 & 19 & 4 & 13 & 14 & 23 & 24 & 16 & 14 & 10 & 15 & 11 & 26 & 11 & 34 & 10 & 6  \\  
+DAL & 4 & 10 & 3 & 3 & 12 & 12 & 16 & 8 & 11 & 12 & 15 & 2 & 11 & 9 & 15 & 13 & 17 & 5  \\ 
+MSY & 22 & 13 & 20 & 3 & 11 & 13 & 23 & 29 & 8 & 13 & 11 & 11 & 8 & 23 & 8 & 35 & 7 & 12 \\  
+MCO & 12 & 29 & 12 & 7 & 22 & 32 & 22 & 24 & 27 & 32 & 26 & 9 & 23 & 22 & 28 & 33 & 29 & 5  \\  
+ATL & 14 & 23 & 14 & 3 & 13 & 13 & 16 & 30 & 10 & 13 & 11 & 15 & 8 & 28 & 8 & 32 & 7 & 5  \\  
+DCA & 14 & 41 & 16 & 9 & 35 & 38 & 29 & 37 & 34 & 38 & 34 & 13 & 35 & 33 & 32 & 40 & 37 & 8 \\  
+PHL & 22 & 17 & 22 & 3 & 9 & 14 & 18 & 33 & 9 & 14 & 10 & 17 & 7 & 29 & 7 & 37 & 4 & 8  \\  
+EWR & 3 & 7 & 10 & 2 & 7 & 8 & 6 & 7 & 12 & 8 & 6 & 5 & 12 & 5 & 5 & 8 & 8 & 2  \\
 \end{array}
 $$
 
@@ -227,9 +217,9 @@ And, we find that there are eight options available to us.
 
 
 <h2>Closing Thoughts</h2>
-While the first problem was small enough that we could visually find the answer, even scaling the problem to 18 airports made the graph rather inpenetrable to inspection.  There are a little over 15,000 airports in the U.S., and trying to <a>visualize</a> all of the various paths, while artistically pleasing, is intractable.  But, we have seen while graphs become muddy when new complexity is added, their adjacency matrices simply become longer.  We also don't really need to see the entire matrix; we could simply <a>request</a> the entry in which we are interested.  
+While the first problem was small enough that we could visually find the answer, even scaling the problem to 18 airports made the graph rather inpenetrable to inspection.  There are a little over 15,000 airports in the U.S., and trying to <a href="https://jamiecornelsen.files.wordpress.com/2012/08/koblin-flight-patterns-1210-lg-43918985.jpg" target="_blank">visualize</a> all of the various paths, while artistically pleasing, is intractable.  But, we have seen while graphs become muddy when new complexity is added, their adjacency matrices simply become longer.  We also don't really need to see the entire matrix; we could simply <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.matrix.item.html" target="_blank">request</a> the entry in which we are interested.  
 
-Admittedly, there is one very unsatisfying aspect to the work we did above: we don't know what the eights paths are for the larger problem.  While we know that they exist, this method does not actually list them explicitly.  To be clear, this doesn't mean that the method is without value; it just means that it is only a preliminary step.  But, using graphs to solve problems like the above is a <a>field unto itself</a>, using tools from pure math and computer science.  Beyond this, using linear algebra to quantify the attributes of graphs is another <a>field unto itself</a>.  It is fantastic that the depths of those fields are not reduced to matrix multiplication, as there is still plenty for us to learn and explore.
+Admittedly, there is one very unsatisfying aspect to the work we did above: we don't know what the eights paths are for the larger problem.  While we know that they exist, this method does not actually list them explicitly.  To be clear, this doesn't mean that the method is without value; it just means that it is only a preliminary step.  But, using graphs to solve problems like the above is a <a href="https://en.wikipedia.org/wiki/Graph_theory" target="_blank">field unto itself</a>, using tools from pure math and computer science.  Beyond this, using linear algebra to quantify the attributes of graphs is another <a href="https://en.wikipedia.org/wiki/Spectral_graph_theory" target="_blank">field unto itself</a>.  It is fantastic that the depths of those fields are not reduced to matrix multiplication, as there is still plenty for us to learn and explore.
 
 Furthermore, as we were working through the ideas above, I hope that you were thinking that I should have chosen "such-and-such" example of connections to really make this interesting.  Perhaps, I should have used how many people you would have to meet to get an introduction to a person you find interesting, or how many Wikipedia articles you would need to click through to get from one topic to another, or how many species separate crows and salamanders in a food web, or any number of other examples.  I know mathematicians love this line, but graphs and the networks to which they are associated are, honestly, everywhere.  Choose your favorite and redo the work above.
 
